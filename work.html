@@ -391,22 +391,45 @@
 
     #imgModal button {
       position: absolute;
-      top: 24px;
-      right: 24px;
       z-index: 10001;
-      width: 48px;
-      height: 48px;
       border: none;
-      border-radius: 50%;
       background: none;
       color: #fff;
-      font-size: 32px;
       cursor: pointer;
       transition: background 0.2s ease;
     }
 
+    #imgModal #modalClose {
+      top: 24px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      font-size: 32px;
+    }
+
+    #imgModal .modal-nav {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.08);
+    }
+    #imgModal .modal-prev { left: 24px; }
+    #imgModal .modal-next { right: 24px; }
+
     #imgModal button:hover {
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.18);
+    }
+
+    @media (max-width: 640px) {
+      #imgModal .modal-nav { width: 44px; height: 44px; }
+      #imgModal .modal-prev { left: 12px; }
+      #imgModal .modal-next { right: 12px; }
     }
 
     .modal-stage {
@@ -756,6 +779,12 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
 
   <div id="imgModal">
     <button id="modalClose" aria-label="Close image modal">&times;</button>
+    <button id="modalPrev" class="modal-nav modal-prev" aria-label="Previous image">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button id="modalNext" class="modal-nav modal-next" aria-label="Next image">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
     <div class="modal-stage">
       <img id="modalImg" src="" alt="">
       <div id="modalInfo">
@@ -912,16 +941,36 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
       var modalType = document.getElementById('modalType');
       var modalInfo = document.getElementById('modalInfo');
       var modalClose = document.getElementById('modalClose');
+      var modalPrev = document.getElementById('modalPrev');
+      var modalNext = document.getElementById('modalNext');
       var filterTabs = Array.prototype.slice.call(document.querySelectorAll('.work-tab'));
       var grid = document.getElementById('workGrid');
 
       if (!modal || !modalImg || !modalName || !modalType || !modalInfo || !modalClose || !grid) return;
 
-      function openModal(src, name, type) {
-        modalImg.src = src;
-        modalImg.alt = name || '';
-        modalName.textContent = name || '';
-        modalType.textContent = type || '';
+      var currentCard = null;
+
+      function visibleCards() {
+        return Array.prototype.slice.call(grid.querySelectorAll('.work-card'))
+          .filter(function(c) { return !c.classList.contains('is-hidden'); });
+      }
+
+      function showCard(card) {
+        if (!card) return;
+        currentCard = card;
+        var img = card.querySelector('img');
+        var name = card.querySelector('.card-name');
+        var type = card.querySelector('.card-type');
+        if (!img) return;
+        var fullSrc = card.getAttribute('data-full') || img.src;
+        modalImg.src = fullSrc;
+        modalImg.alt = name ? name.textContent : '';
+        modalName.textContent = name ? name.textContent : '';
+        modalType.textContent = type ? type.textContent : '';
+      }
+
+      function openModal(card) {
+        showCard(card);
         modal.style.display = 'block';
         requestAnimationFrame(function () {
           modal.style.opacity = '1';
@@ -937,7 +986,17 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
         window.setTimeout(function () {
           modal.style.display = 'none';
           modalImg.src = '';
+          currentCard = null;
         }, 300);
+      }
+
+      function navigate(dir) {
+        if (!currentCard) return;
+        var cards = visibleCards();
+        var idx = cards.indexOf(currentCard);
+        if (idx === -1) return;
+        var next = cards[(idx + dir + cards.length) % cards.length];
+        showCard(next);
       }
 
       function applyFilter(filter) {
@@ -959,12 +1018,7 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
       grid.addEventListener('click', function(e) {
         var card = e.target.closest && e.target.closest('.work-card');
         if (!card) return;
-        var img = card.querySelector('img');
-        var name = card.querySelector('.card-name');
-        var type = card.querySelector('.card-type');
-        if (!img) return;
-        var fullSrc = card.getAttribute('data-full') || img.src;
-        openModal(fullSrc, name ? name.textContent : '', type ? type.textContent : '');
+        openModal(card);
       });
 
       modal.addEventListener('click', function (e) {
@@ -974,8 +1028,13 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
       });
 
       modalClose.addEventListener('click', closeModal);
+      if (modalPrev) modalPrev.addEventListener('click', function(e) { e.stopPropagation(); navigate(-1); });
+      if (modalNext) modalNext.addEventListener('click', function(e) { e.stopPropagation(); navigate(1); });
       document.addEventListener('keydown', function (e) {
+        if (modal.style.display !== 'block') return;
         if (e.key === 'Escape') closeModal();
+        else if (e.key === 'ArrowLeft') navigate(-1);
+        else if (e.key === 'ArrowRight') navigate(1);
       });
     })();
   </script>

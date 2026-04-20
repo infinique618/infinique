@@ -471,6 +471,12 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
   <!-- Image Modal -->
   <div id="imgModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;cursor:pointer;backdrop-filter:blur(8px);opacity:0;transition:opacity 0.3s ease;">
     <button id="modalClose" style="position:absolute;top:24px;right:24px;background:none;border:none;color:white;font-size:32px;cursor:pointer;z-index:10001;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background 0.2s;">&times;</button>
+    <button id="modalPrev" aria-label="Previous image" style="position:absolute;left:24px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.08);border:none;color:white;cursor:pointer;z-index:10001;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background 0.2s;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button id="modalNext" aria-label="Next image" style="position:absolute;right:24px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.08);border:none;color:white;cursor:pointer;z-index:10001;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background 0.2s;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
     <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;padding:40px;">
       <img id="modalImg" src="" alt="" style="max-width:90vw;max-height:80vh;object-fit:contain;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.5);transform:scale(0.9);transition:transform 0.3s ease;">
       <div id="modalInfo" style="margin-top:16px;text-align:center;opacity:0;transition:opacity 0.3s ease 0.1s;">
@@ -483,15 +489,21 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
 
   <script>
   (function(){
-    var modal=document.getElementById('imgModal'),modalImg=document.getElementById('modalImg'),modalName=document.getElementById('modalName'),modalType=document.getElementById('modalType'),modalInfo=document.getElementById('modalInfo'),modalClose=document.getElementById('modalClose');
-    function openModal(src,name,type){modalImg.src=src;modalName.textContent=name;modalType.textContent=type;modal.style.display='block';requestAnimationFrame(function(){modal.style.opacity='1';modalImg.style.transform='scale(1)';modalInfo.style.opacity='1';});var sw=window.innerWidth-document.documentElement.clientWidth;document.body.style.overflow='hidden';document.body.style.paddingRight=sw+'px';}
-    function closeModal(){modal.style.opacity='0';modalImg.style.transform='scale(0.9)';modalInfo.style.opacity='0';setTimeout(function(){modal.style.display='none';document.body.style.overflow='';document.body.style.paddingRight='';},300);}
-    document.querySelectorAll('#work .group.cursor-pointer').forEach(function(card){card.addEventListener('click',function(){var img=card.querySelector('img');var labels=card.querySelectorAll('.absolute span');openModal(card.getAttribute('data-full')||img.src,labels[0]?labels[0].textContent:'',labels[1]?labels[1].textContent:'');});});
-    modal.addEventListener('click',function(e){if(e.target===modal||e.target===modal.querySelector('div'))closeModal();});
-    modalClose.addEventListener('click',closeModal);
+    var modal=document.getElementById('imgModal'),modalImg=document.getElementById('modalImg'),modalName=document.getElementById('modalName'),modalType=document.getElementById('modalType'),modalInfo=document.getElementById('modalInfo'),modalClose=document.getElementById('modalClose'),modalPrev=document.getElementById('modalPrev'),modalNext=document.getElementById('modalNext');
+    var currentCard=null;
+    function mainCards(){return Array.prototype.slice.call(document.querySelectorAll('#work .group.cursor-pointer'));}
+    function showCard(card){if(!card)return;currentCard=card;var img=card.querySelector('img');var labels=card.querySelectorAll('.absolute span');modalImg.src=card.getAttribute('data-full')||img.src;modalName.textContent=labels[0]?labels[0].textContent:'';modalType.textContent=labels[1]?labels[1].textContent:'';}
+    function openModal(card){showCard(card);modal.style.display='block';requestAnimationFrame(function(){modal.style.opacity='1';modalImg.style.transform='scale(1)';modalInfo.style.opacity='1';});var sw=window.innerWidth-document.documentElement.clientWidth;document.body.style.overflow='hidden';document.body.style.paddingRight=sw+'px';}
+    function closeModal(){modal.style.opacity='0';modalImg.style.transform='scale(0.9)';modalInfo.style.opacity='0';setTimeout(function(){modal.style.display='none';document.body.style.overflow='';document.body.style.paddingRight='';currentCard=null;},300);}
+    function navigate(dir){if(!currentCard)return;var cards=mainCards();var idx=cards.indexOf(currentCard);if(idx===-1)return;showCard(cards[(idx+dir+cards.length)%cards.length]);}
+    document.querySelectorAll('#work .group.cursor-pointer').forEach(function(card){card.addEventListener('click',function(){openModal(card);});});
+    modal.addEventListener('click',function(e){if(e.target===modal||(e.target.parentElement===modal&&e.target.tagName==='DIV'))closeModal();});
+    modalClose.addEventListener('click',function(e){e.stopPropagation();closeModal();});
     modalClose.addEventListener('mouseenter',function(){this.style.background='rgba(255,255,255,0.1)';});
     modalClose.addEventListener('mouseleave',function(){this.style.background='none';});
-    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+    if(modalPrev){modalPrev.addEventListener('click',function(e){e.stopPropagation();navigate(-1);});modalPrev.addEventListener('mouseenter',function(){this.style.background='rgba(255,255,255,0.18)';});modalPrev.addEventListener('mouseleave',function(){this.style.background='rgba(255,255,255,0.08)';});}
+    if(modalNext){modalNext.addEventListener('click',function(e){e.stopPropagation();navigate(1);});modalNext.addEventListener('mouseenter',function(){this.style.background='rgba(255,255,255,0.18)';});modalNext.addEventListener('mouseleave',function(){this.style.background='rgba(255,255,255,0.08)';});}
+    document.addEventListener('keydown',function(e){if(modal.style.display!=='block')return;if(e.key==='Escape')closeModal();else if(e.key==='ArrowLeft')navigate(-1);else if(e.key==='ArrowRight')navigate(1);});
   })();
   </script>
 
