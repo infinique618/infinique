@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /_tmp_grid_ko.html
+
+Sitemap: https://infinique.kr/sitemap.xml

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://infinique.kr/</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://infinique.kr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://infinique.kr/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://infinique.kr/"/>
+  </url>
+  <url>
+    <loc>https://infinique.kr/about.html</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://infinique.kr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://infinique.kr/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://infinique.kr/about.html"/>
+  </url>
+  <url>
+    <loc>https://infinique.kr/work.html</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://infinique.kr/work.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://infinique.kr/en/work.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://infinique.kr/work.html"/>
+  </url>
+  <url>
+    <loc>https://infinique.kr/contact.html</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://infinique.kr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://infinique.kr/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://infinique.kr/contact.html"/>
+  </url>
+  <url>
+    <loc>https://infinique.kr/en/</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://infinique.kr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://infinique.kr/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://infinique.kr/"/>
+  </url>
+  <url>
+    <loc>https://infinique.kr/en/about.html</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://infinique.kr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://infinique.kr/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://infinique.kr/about.html"/>
+  </url>
+  <url>
+    <loc>https://infinique.kr/en/work.html</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://infinique.kr/work.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://infinique.kr/en/work.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://infinique.kr/work.html"/>
+  </url>
+  <url>
+    <loc>https://infinique.kr/en/contact.html</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://infinique.kr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://infinique.kr/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://infinique.kr/contact.html"/>
+  </url>
+</urlset>

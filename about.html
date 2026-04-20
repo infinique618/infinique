@@ -1,0 +1,2229 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Infinique — PPT 전문 디자인 스튜디오 소개</title>
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+  <meta name="description" content="인피니크는 브랜드와 메시지의 본질을 정리해 설득력 있는 프레젠테이션으로 완성하는 PPT 디자인 스튜디오입니다. 기획·구조·디자인·전달력을 하나의 흐름으로 연결합니다.">
+  <meta name="keywords" content="인피니크 소개, Infinique about, PPT 디자인 스튜디오, 프레젠테이션 디자인 회사, PPT 전문 에이전시">
+  <meta name="author" content="Infinique">
+  <link rel="canonical" href="https://infinique.kr/about.html">
+  <link rel="alternate" hreflang="ko" href="https://infinique.kr/about.html">
+  <link rel="alternate" hreflang="en" href="https://infinique.kr/en/about.html">
+  <link rel="alternate" hreflang="x-default" href="https://infinique.kr/about.html">
+  <meta property="og:title" content="About | Infinique — PPT 전문 디자인 스튜디오 소개">
+  <meta property="og:description" content="인피니크는 브랜드와 메시지의 본질을 정리해 설득력 있는 프레젠테이션으로 완성하는 PPT 디자인 스튜디오입니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://infinique.kr/about.html">
+  <meta property="og:site_name" content="Infinique">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://infinique.kr/assets/og.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1120">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About | Infinique — PPT 전문 디자인 스튜디오 소개">
+  <meta name="twitter:description" content="브랜드의 본질을 정리해 설득력 있는 프레젠테이션으로 완성하는 PPT 스튜디오.">
+  <meta name="twitter:image" content="https://infinique.kr/assets/og.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://umzfjxrrotvwcmurzduz.supabase.co">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/Paperlogy.css" type="text/css">
+  <link rel="stylesheet" href="./assets/70085daa54d49f05a0f0ca04076f60814897b7f6.css">
+  <style>
+    :root {
+      --bg: #000;
+      --fg: #fff;
+      --line: rgba(255,255,255,0.1);
+      --muted: rgba(255,255,255,0.68);
+      --soft: rgba(255,255,255,0.04);
+      --circle: rgba(255,255,255,0.22);
+      --circle-strong: rgba(255,255,255,0.3);
+      --warm: rgba(53, 29, 21, 0.92);
+      --about-main-size: 320px;
+      --about-ring-size: 560px;
+      --about-side-size: 320px;
+      --about-side-distance: 360px;
+      --about-large-size: 688px;
+      --diagram-scale: 0.9;
+      --diagram-crop-height: 738px;
+    }
+
+    html, body {
+      margin: 0;
+      width: 100%;
+      min-height: 100%;
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body, p, a, span, button, input, textarea, li {
+      font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    }
+
+    .page-shell {
+      min-height: 100vh;
+      background: #000;
+    }
+
+    .nav-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 64px;
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(0,0,0,0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      max-width: 160px;
+    }
+
+    .nav-brand svg {
+      display: block;
+      width: 100%;
+      max-width: 96px;
+      height: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 0 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background: #444;
+    }
+
+    .nav-links a.is-active {
+      background: #fff;
+      color: #000;
+    }
+
+    /* ── Lang toggle ── */
+    .lang-wrap { position: relative; }
+
+    .lang-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 36px;
+      padding: 0 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .lang-btn:hover { background: rgba(255,255,255,0.08); }
+
+    #langDropdown {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: calc(100% + 8px);
+      min-width: 132px;
+      background: rgba(0,0,0,0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px;
+      overflow: hidden;
+      z-index: 100;
+    }
+
+    #langDropdown a {
+      display: block;
+      padding: 10px 16px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s;
+      min-height: auto;
+      border-radius: 0;
+    }
+
+    #langDropdown a:hover { background: rgba(255,255,255,0.1); }
+
+    /* ── Nav toggle (hamburger) ── */
+    .nav-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      cursor: pointer;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: #fff;
+      border-radius: 999px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      transform-origin: center;
+    }
+
+    .about-page {
+      width: 100%;
+      padding: 132px 24px 80px;
+    }
+
+    .about-inner {
+      width: 100%;
+      max-width: 1920px;
+      margin: 0 auto;
+    }
+
+    .about-hero {
+      position: relative;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 80px;
+      padding-bottom: 60px;
+    }
+    .about-hero::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 100vw;
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .about-kicker {
+      margin: 0 0 10px;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.58);
+    }
+
+    .about-title {
+      margin: 0;
+      font-family: 'Barlow Condensed', 'Arial Narrow', 'Helvetica Neue', sans-serif !important;
+      font-size: clamp(48px, 8vw, 108px);
+      font-weight: 500;
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+    }
+
+    .about-copy {
+      max-width: 1200px;
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.76);
+    }
+
+    .about-diagram-row {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .about-intro {
+      flex: 1 1 0;
+      min-width: 0;
+      max-width: 810px;
+      padding: 40px 0 40px 48px;
+    }
+
+    .about-intro-kicker {
+      margin: 0 0 16px;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.44);
+    }
+
+    .about-intro-title {
+      margin: 0 0 28px;
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-size: clamp(28px, 2.8vw, 40px);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .about-intro-lead {
+      margin: 0 0 24px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.9);
+      font-weight: 500;
+    }
+
+    .about-intro-lead .emoji { font-style: normal; }
+
+    .about-intro-body {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .about-intro-body p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.62);
+    }
+
+    .diagram-crop {
+      position: relative;
+      flex: 1 1 auto;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: auto;
+      max-width: 1280px;
+      height: var(--diagram-crop-height);
+      overflow: hidden;
+      margin-left: -180px;
+    }
+
+    .diagram-mobile {
+      display: none;
+    }
+
+    .diagram-mobile-image {
+      display: none;
+      width: min(100%, 960px);
+      height: auto;
+      margin: 0 0 32px;
+    }
+
+    .diagram-mobile > .mobile-flow {
+      display: none !important;
+      visibility: hidden !important;
+      max-height: 0 !important;
+      overflow: hidden !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .diagram-stage {
+      position: relative;
+      flex: 0 0 auto;
+      width: 1320px;
+      max-width: none;
+      min-height: 1320px;
+      background: #000;
+      overflow: hidden;
+      isolation: isolate;
+      transform: scale(var(--diagram-scale));
+      transform-origin: center center;
+    }
+
+    /* ── Diagram animations ── */
+    @keyframes dg-fade-in {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes dg-scale-in {
+      from { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+      to   { transform: translate(-50%, -50%) scale(1);   opacity: 1; }
+    }
+    @keyframes dg-halo-in {
+      from { transform: translate(-50%, -50%) scale(0.4); opacity: 0; }
+      to   { transform: translate(-50%, -50%) scale(1);   opacity: 1; }
+    }
+    @keyframes dg-from-left {
+      from { transform: translateY(-50%) translateX(-180px); opacity: 0; }
+      to   { transform: translateY(-50%) translateX(0);       opacity: 1; }
+    }
+    @keyframes dg-from-right {
+      from { transform: translateY(-50%) translateX(180px); opacity: 0; }
+      to   { transform: translateY(-50%) translateX(0);      opacity: 1; }
+    }
+    @keyframes dg-from-top {
+      from { transform: translateX(-50%) translateY(-180px); opacity: 0; }
+      to   { transform: translateX(-50%) translateY(0);       opacity: 1; }
+    }
+    @keyframes dg-from-bottom {
+      from { transform: translateX(-50%) translateY(180px); opacity: 0; }
+      to   { transform: translateX(-50%) translateY(0);      opacity: 1; }
+    }
+    @keyframes dg-caption-top-in {
+      from { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+      to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+    @keyframes dg-caption-bottom-in {
+      from { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+      to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+
+    /* 중앙 원 + 로고: 거의 동시에, 빠르게 */
+    .diagram-stage.dg-animate .diagram-node.main {
+      opacity: 0;
+      animation: dg-scale-in 0.45s cubic-bezier(0.22,1,0.36,1) 0.05s forwards;
+    }
+    .diagram-stage.dg-animate .diagram-halo {
+      opacity: 0;
+      animation: dg-halo-in 0.45s cubic-bezier(0.22,1,0.36,1) 0.1s forwards;
+    }
+    .diagram-stage.dg-animate .diagram-node.main .diagram-wordmark {
+      opacity: 0;
+      animation: dg-fade-in 0.35s ease 0.3s forwards;
+    }
+    /* 좌우 원: 스르륵 */
+    .diagram-stage.dg-animate .diagram-node.side.left {
+      opacity: 0;
+      animation: dg-from-left 0.9s cubic-bezier(0.16,1,0.3,1) 0.65s forwards;
+    }
+    .diagram-stage.dg-animate .diagram-node.side.right {
+      opacity: 0;
+      animation: dg-from-right 0.9s cubic-bezier(0.16,1,0.3,1) 0.9s forwards;
+    }
+    /* 위아래 원: 스르륵 */
+    .diagram-stage.dg-animate .diagram-node.large.top {
+      opacity: 0;
+      animation: dg-from-top 0.9s cubic-bezier(0.16,1,0.3,1) 1.2s forwards;
+    }
+    .diagram-stage.dg-animate .diagram-node.large.bottom {
+      opacity: 0;
+      animation: dg-from-bottom 0.9s cubic-bezier(0.16,1,0.3,1) 1.45s forwards;
+    }
+    /* 텍스트: 각 원 등장 직후 페이드인 */
+    .diagram-stage.dg-animate .diagram-node.side.left .node-copy {
+      opacity: 0;
+      animation: dg-fade-in 0.5s ease 1.3s forwards;
+    }
+    .diagram-stage.dg-animate .diagram-node.side.right .node-copy {
+      opacity: 0;
+      animation: dg-fade-in 0.5s ease 1.55s forwards;
+    }
+    .diagram-stage.dg-animate .diagram-node.large.top .node-copy {
+      opacity: 0;
+      animation: dg-fade-in 0.5s ease 1.85s forwards;
+    }
+    .diagram-stage.dg-animate .diagram-node.large.bottom .node-copy {
+      opacity: 0;
+      animation: dg-fade-in 0.5s ease 2.1s forwards;
+    }
+    .diagram-stage.dg-animate .diagram-caption.top {
+      opacity: 0;
+      animation: dg-caption-top-in 0.6s cubic-bezier(0.16,1,0.3,1) 1.95s forwards;
+    }
+    .diagram-stage.dg-animate .diagram-caption.bottom {
+      opacity: 0;
+      animation: dg-caption-bottom-in 0.6s cubic-bezier(0.16,1,0.3,1) 2.2s forwards;
+    }
+
+    .diagram-halo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: var(--about-ring-size);
+      height: var(--about-ring-size);
+      border: 1px dashed rgba(255,255,255,0.22);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255,255,255,0.22);
+      z-index: 2;
+    }
+
+    .diagram-node {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 50%;
+      color: #fff;
+    }
+
+    .diagram-node.large {
+      width: var(--about-large-size);
+      height: var(--about-large-size);
+      border: none;
+      background: transparent;
+      font-size: clamp(28px, 2.2vw, 44px);
+      font-weight: 700;
+      line-height: 1.12;
+      z-index: 1;
+    }
+    .diagram-node.large::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px dashed rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.14);
+      border-radius: 50%;
+      box-sizing: border-box;
+      pointer-events: none;
+    }
+    .diagram-node.large.top::before {
+      -webkit-mask-image: linear-gradient(to bottom, transparent 70%, #000 90%);
+      mask-image: linear-gradient(to bottom, transparent 70%, #000 90%);
+    }
+    .diagram-node.large.bottom::before {
+      -webkit-mask-image: linear-gradient(to top, transparent 70%, #000 90%);
+      mask-image: linear-gradient(to top, transparent 70%, #000 90%);
+    }
+
+    .diagram-node.large .node-copy {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .diagram-node.large.top {
+      top: -220px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .diagram-node.large.bottom {
+      bottom: -220px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .diagram-node.large.top .node-copy {
+      bottom: 140px;
+    }
+
+    .diagram-node.large.bottom .node-copy {
+      top: 140px;
+    }
+
+    .diagram-node.main {
+      top: 50%;
+      left: 50%;
+      width: var(--about-main-size);
+      height: var(--about-main-size);
+      transform: translate(-50%, -50%);
+      border: 1.5px solid #999;
+      background: #030303;
+      z-index: 3;
+    }
+
+    .diagram-node.side {
+      width: var(--about-side-size);
+      height: var(--about-side-size);
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(0,0,0,0.5);
+      z-index: 4;
+      padding: 24px 22px;
+    }
+
+    .diagram-node.side.left {
+      top: 50%;
+      left: calc(50% - var(--about-side-distance) - (var(--about-side-size) / 2));
+      transform: translateY(-50%);
+    }
+
+    .diagram-node.side.right {
+      top: 50%;
+      left: calc(50% + var(--about-side-distance) - (var(--about-side-size) / 2));
+      transform: translateY(-50%);
+    }
+
+    .diagram-wordmark {
+      width: min(66.6%, 234px);
+      height: auto;
+      display: block;
+    }
+    .diagram-wordmark path {
+      fill: #ccc !important;
+    }
+
+    .node-copy {
+      display: grid;
+      gap: 12px;
+    }
+
+    .node-title {
+      margin: 0;
+      font-family: "Paperlogy", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      font-size: clamp(20px, 1.6vw, 30px);
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .node-label {
+      margin: 0;
+      font-family: "Paperlogy", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      font-size: clamp(18px, 1.4vw, 26px);
+      font-weight: 300;
+      line-height: 1.45;
+    }
+
+    .diagram-node.large .node-title {
+      font-size: calc(clamp(20px, 1.6vw, 30px) * 0.8);
+      font-weight: 700;
+    }
+
+    .diagram-node.side .node-label {
+      font-size: calc(clamp(18px, 1.4vw, 26px) * 0.7);
+    }
+
+    .node-desc {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .diagram-node.side .node-desc {
+      font-size: calc(14px * 1.2);
+    }
+
+    .diagram-caption {
+      position: absolute;
+      left: 50%;
+      display: grid;
+      justify-items: center;
+      gap: 16px;
+      transform: translateX(-50%);
+      z-index: 5;
+    }
+
+    .diagram-caption.top {
+      top: 360px;
+    }
+
+    .diagram-caption.bottom {
+      bottom: 411px;
+    }
+
+    .caption-arrow {
+      width: 86px;
+      height: 42px;
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 34%, rgba(0,0,0,0.62) 68%, rgba(0,0,0,0.96) 100%);
+      opacity: 1;
+      filter: blur(0.2px);
+    }
+
+    .diagram-caption.bottom .caption-arrow {
+      order: 1;
+      transform: none;
+    }
+
+    .diagram-caption.bottom .caption-copy {
+      order: 2;
+    }
+
+    .caption-copy {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.4;
+      color: rgba(255,255,255,0.9);
+      white-space: nowrap;
+      text-align: center;
+    }
+
+    .mobile-flow {
+      position: relative;
+      width: min(100%, 420px);
+      height: 760px;
+      margin: 0 auto 28px;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .mobile-large,
+    .mobile-ring,
+    .mobile-center,
+    .mobile-side {
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .mobile-large {
+      left: 50%;
+      width: 420px;
+      height: 420px;
+      transform: translateX(-50%);
+      border: 1px dashed rgba(255,255,255,0.24);
+      background: rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .mobile-large.top {
+      top: -250px;
+    }
+
+    .mobile-large.bottom {
+      bottom: -250px;
+    }
+
+    .mobile-large .node-title {
+      font-size: 22px;
+    }
+
+    .mobile-large.top .node-title {
+      margin-top: 168px;
+    }
+
+    .mobile-large.bottom .node-title {
+      margin-bottom: 168px;
+    }
+
+    .mobile-ring {
+      top: 180px;
+      left: 50%;
+      width: 320px;
+      height: 320px;
+      transform: translateX(-50%);
+      border: 1px dashed rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.16);
+      z-index: 2;
+    }
+
+    .mobile-center {
+      top: 230px;
+      left: 50%;
+      width: 220px;
+      height: 220px;
+      transform: translateX(-50%);
+      border: 1.5px solid #999;
+      background: #030303;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 4;
+    }
+
+    .mobile-side {
+      top: 272px;
+      width: 168px;
+      height: 168px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px 16px;
+      z-index: 5;
+    }
+
+    .mobile-side.left {
+      left: 6px;
+    }
+
+    .mobile-side.right {
+      right: 6px;
+    }
+
+    .mobile-side .node-copy {
+      gap: 8px;
+    }
+
+    .mobile-side .node-label {
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .mobile-side .node-desc {
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .mobile-caption {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
+      z-index: 6;
+    }
+
+    .mobile-caption.top {
+      top: 134px;
+    }
+
+    .mobile-caption.bottom {
+      bottom: 126px;
+    }
+
+    .mobile-caption .caption-copy {
+      max-width: 240px;
+      white-space: normal;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .content-panel {
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 28px;
+      background: rgba(255,255,255,0.03);
+      padding: 34px 32px;
+    }
+
+    .panel-kicker {
+      margin: 0 0 16px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.46);
+    }
+
+    .panel-title {
+      margin: 0 0 16px;
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+
+    .panel-copy {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .principle-list,
+    .metric-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .principle-item,
+    .metric-item {
+      display: grid;
+      gap: 6px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .principle-item strong,
+    .metric-item strong {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .principle-item span,
+    .metric-item span {
+      color: rgba(255,255,255,0.66);
+      line-height: 1.65;
+    }
+
+    .about-split {
+      display: flex;
+      gap: 0;
+      align-items: flex-start;
+      margin-bottom: 0;
+      padding: 0;
+    }
+    .about-split-text {
+      flex: 1 1 0;
+      min-width: 0;
+      max-width: 810px;
+      padding: 40px 48px 40px 0;
+    }
+    .about-split-text .about-intro-body { gap: 0; }
+    .about-split-image {
+      flex: 1 1 0;
+      max-width: 1000px;
+      margin-left: auto;
+    }
+    @media (max-width: 1200px) {
+      .about-split { flex-direction: column-reverse; gap: 40px; align-items: stretch; }
+      .about-split-text { max-width: 100% !important; padding: 0 !important; }
+      .about-split-image { max-width: 100% !important; margin-left: 0 !important; }
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin: clamp(32px, 7vw, 80px) 0;
+    }
+
+    /* 1201~1400: 좌측 래퍼 축소, 도표 작게 */
+    @media (min-width: 1201px) and (max-width: 1400px) {
+      .about-diagram-row .diagram-crop { margin-left: 0 !important; justify-content: center !important; max-width: 620px !important; }
+      :root { --diagram-scale: 0.48; }
+      .about-split-image { max-width: 520px !important; }
+      .about-clients-wrap { max-width: 520px !important; }
+      .about-partners-row .about-intro { margin-left: 32px !important; }
+    }
+    /* 1401~1600: 중간 사이즈 */
+    @media (min-width: 1401px) and (max-width: 1600px) {
+      .about-diagram-row .diagram-crop { margin-left: 0 !important; justify-content: center !important; max-width: 820px !important; }
+      :root { --diagram-scale: 0.62; }
+      .about-split-image { max-width: 700px !important; }
+      .about-clients-wrap { max-width: 700px !important; }
+      .about-partners-row .about-intro { margin-left: 48px !important; }
+    }
+
+    /* Clients Section */
+    .about-clients {
+      margin-top: 0;
+      padding-bottom: 0;
+    }
+    .about-partners-row {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    .about-partners-row .about-clients-wrap {
+      flex: 1 1 auto;
+    }
+    .about-partners-row .about-intro {
+      margin-left: 100px;
+    }
+    .about-partners-row .about-intro-body { gap: 0; }
+    .about-clients-wrap {
+      width: 100%;
+      max-width: 1000px;
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 28px;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    .about-clients-wrap.visible { opacity: 1; }
+    @media (max-width: 1200px) {
+      .about-partners-row { flex-direction: column; align-items: stretch; gap: 32px; }
+      .about-partners-row .about-intro { margin-left: 0 !important; padding: 0 !important; flex: none !important; }
+      .about-clients-wrap { max-width: 100% !important; padding: 20px !important; }
+    }
+    .clients-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .clients-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 28px;
+    }
+    .clients-row-offset {
+      grid-template-columns: repeat(4, 1fr);
+      margin: 0 calc((100% + 28px) / 10);
+    }
+    .client-tile {
+      aspect-ratio: 15/8;
+      background: transparent;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .client-tile img {
+      max-width: 58%;
+      max-height: 58%;
+      object-fit: contain;
+    }
+    @media (max-width: 768px) {
+      .clients-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+      .clients-row { display: contents; }
+      .clients-row-offset { margin: 0; }
+      .about-clients-wrap { padding: 16px; }
+    }
+
+    /* Before/After Carousel */
+    .ba-carousel {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+    .ba-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.22,1,0.36,1);
+    }
+    .ba-slide {
+      flex: 0 0 100%;
+      min-width: 0;
+    }
+    .ba-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.35);
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 20;
+      transition: background 0.2s;
+    }
+    .ba-nav:hover { background: rgba(255,255,255,0.55); }
+    .ba-nav svg { width: 20px; height: 20px; }
+    .ba-nav.prev { left: 16px; }
+    .ba-nav.next { right: 16px; }
+    .ba-dots {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 20;
+    }
+    .ba-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.4);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: background 0.2s, width 0.2s;
+    }
+    .ba-dot.active {
+      background: #fff;
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    /* Before/After Slider */
+    .ba-slider {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      border-radius: 8px;
+      user-select: none;
+      cursor: col-resize;
+    }
+    .ba-slider img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+    }
+    .ba-after {
+      clip-path: inset(0 50% 0 0);
+      filter: grayscale(1);
+    }
+    .ba-handle {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      background: transparent;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .ba-handle::before,
+    .ba-handle::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
+      background: #fff;
+      border-radius: 50%;
+      top: 50%;
+      margin-top: -20px;
+    }
+    .ba-handle::before,
+    .ba-handle::after { display: none; }
+    .ba-knob {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 11;
+      pointer-events: none;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    }
+    .ba-knob svg {
+      width: 20px;
+      height: 20px;
+    }
+    .ba-label {
+      position: absolute;
+      top: 75%;
+      transform: translateY(-50%);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: rgba(0,0,0,0.6);
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 11;
+    }
+    .ba-label.before { right: 32px; }
+    .ba-label.after  { left: 32px; }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .process-card {
+      min-height: 220px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      padding: 24px;
+    }
+
+    .process-index {
+      display: inline-flex;
+      min-width: 32px;
+      min-height: 32px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.74);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      margin-bottom: 18px;
+    }
+
+    .process-card h3 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .process-card p {
+      margin: 0;
+      color: rgba(255,255,255,0.66);
+      line-height: 1.7;
+    }
+
+    .footer {
+      padding: 16px 24px 80px;
+    }
+
+    .footer-inner {
+      max-width: 1920px;
+      margin: 0 auto;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      color: rgba(255,255,255,0.62);
+      font-size: 14px;
+    }
+
+    .footer a {
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+    }
+
+    @media (max-width: 1440px) {
+      :root {
+        --about-main-size: 292px;
+        --about-ring-size: 520px;
+        --about-side-size: 292px;
+        --about-side-distance: 322px;
+        --about-large-size: 624px;
+        --diagram-scale: 0.82;
+        --diagram-crop-height: 680px;
+      }
+
+      .diagram-stage {
+        width: 1180px;
+        min-height: 1180px;
+      }
+
+      .diagram-node.large.top {
+        top: -180px;
+      }
+
+      .diagram-node.large.bottom {
+        bottom: -180px;
+      }
+
+      .diagram-node.large.top .node-copy {
+        bottom: 128px;
+      }
+
+      .diagram-node.large.bottom .node-copy {
+        top: 128px;
+      }
+
+      .diagram-caption.top {
+        top: 318px;
+      }
+
+      .diagram-caption.bottom {
+        bottom: 377px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      :root {
+        --about-main-size: 260px;
+        --about-ring-size: 460px;
+        --about-side-size: 260px;
+        --about-side-distance: 280px;
+        --about-large-size: 560px;
+        --diagram-scale: 1;
+        --diagram-crop-height: 760px;
+      }
+
+      .diagram-stage {
+        width: 1040px;
+        min-height: 1040px;
+      }
+
+      .diagram-node.large.top {
+        top: -150px;
+      }
+
+      .diagram-node.large.bottom {
+        bottom: -150px;
+      }
+
+      .diagram-node.large.top .node-copy {
+        bottom: 114px;
+      }
+
+      .diagram-node.large.bottom .node-copy {
+        top: 114px;
+      }
+
+      .diagram-caption.top {
+        top: 288px;
+      }
+
+      .diagram-caption.bottom {
+        bottom: 334px;
+      }
+
+      .caption-copy {
+        font-size: 17px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      :root {
+        --about-main-size: 236px;
+        --about-ring-size: 420px;
+        --about-side-size: 236px;
+        --about-side-distance: 230px;
+        --about-large-size: 520px;
+        --diagram-scale: 0.9;
+        --diagram-crop-height: 680px;
+      }
+
+      .diagram-stage {
+        width: 980px;
+        min-height: 980px;
+      }
+
+      .diagram-node.large.top {
+        top: -138px;
+      }
+
+      .diagram-node.large.bottom {
+        bottom: -138px;
+      }
+
+      .diagram-node.large.top .node-copy {
+        bottom: 102px;
+      }
+
+      .diagram-node.large.bottom .node-copy {
+        top: 102px;
+      }
+
+      .diagram-caption.top {
+        top: 266px;
+      }
+
+      .diagram-caption.bottom {
+        bottom: 304px;
+      }
+
+      .caption-copy {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .about-diagram-row { flex-direction: column; align-items: stretch; gap: 40px; }
+      .about-diagram-row .diagram-crop { margin-left: 0 !important; max-width: 100% !important; justify-content: center !important; overflow: hidden; }
+      .about-diagram-row .about-intro { flex: none; max-width: 100% !important; padding: 0 !important; }
+    }
+
+    @media (max-width: 768px) {
+      .about-inner { display: flex; flex-direction: column; }
+      .about-hero { order: -3; }
+      .about-diagram-row { order: -1; }
+      .about-intro { padding: 0 0 32px; }
+      .diagram-crop { display: flex !important; max-width: 100% !important; margin-left: 0 !important; justify-content: center !important; }
+      :root { --diagram-scale: 0.78; --diagram-crop-height: 560px; }
+      .diagram-mobile { display: none !important; }
+      .diagram-mobile-image { display: none; }
+      .mobile-flow { display: none; }
+
+      .mobile-flow {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas:
+          "top top"
+          "caption-top caption-top"
+          "center center"
+          "left right"
+          "caption-bottom caption-bottom"
+          "bottom bottom";
+        justify-items: center;
+        align-items: center;
+        row-gap: 22px;
+        width: min(100%, 420px);
+        height: auto;
+        margin: 0 auto 32px;
+        overflow: hidden;
+      }
+
+      .mobile-large,
+      .mobile-ring,
+      .mobile-center,
+      .mobile-side,
+      .mobile-caption {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        transform: none;
+      }
+
+      .mobile-large {
+        width: clamp(380px, 132vw, 540px);
+        height: clamp(380px, 132vw, 540px);
+      }
+
+      .mobile-large.top {
+        grid-area: top;
+        margin-top: calc(-1 * clamp(220px, 48vw, 290px));
+        margin-bottom: calc(-1 * clamp(150px, 30vw, 200px));
+      }
+
+      .mobile-large.bottom {
+        grid-area: bottom;
+        margin-top: calc(-1 * clamp(150px, 30vw, 200px));
+        margin-bottom: calc(-1 * clamp(220px, 48vw, 290px));
+      }
+
+      .mobile-large .node-title {
+        font-size: clamp(18px, 4.3vw, 22px);
+      }
+
+      .mobile-large.top .node-title {
+        margin-top: clamp(150px, 34vw, 188px);
+      }
+
+      .mobile-large.bottom .node-title {
+        margin-bottom: clamp(150px, 34vw, 188px);
+      }
+
+      .mobile-caption {
+        gap: 10px;
+      }
+
+      .mobile-caption.top {
+        grid-area: caption-top;
+      }
+
+      .mobile-caption.bottom {
+        grid-area: caption-bottom;
+      }
+
+      .mobile-ring {
+        grid-area: center;
+        width: min(76vw, 320px);
+        height: min(76vw, 320px);
+      }
+
+      .mobile-center {
+        grid-area: center;
+        width: min(54vw, 220px);
+        height: min(54vw, 220px);
+        z-index: 4;
+      }
+
+      .mobile-side {
+        width: min(38vw, 158px);
+        height: min(38vw, 158px);
+        padding: 18px 12px;
+      }
+
+      .mobile-side.left {
+        grid-area: left;
+        justify-self: start;
+        margin-left: 2px;
+      }
+
+      .mobile-side.right {
+        grid-area: right;
+        justify-self: end;
+        margin-right: 2px;
+      }
+
+      .caption-copy {
+        font-size: 16px;
+        white-space: normal;
+        max-width: 320px;
+      }
+
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-bar {
+        padding: 12px 16px;
+      }
+
+      .nav-toggle { display: flex; margin-left: auto; }
+
+      .nav-links {
+        display: none !important;
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 14px;
+        right: 14px;
+        padding: 12px;
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 14px;
+        background: rgba(0,0,0,0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        z-index: 60;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+      }
+
+      .nav-bar.nav-open .nav-links { display: flex !important; }
+
+      .nav-links a, .lang-wrap { width: 100%; }
+
+      .nav-links a {
+        justify-content: flex-start;
+        padding: 12px 14px;
+        border-radius: 12px;
+      }
+
+      .lang-btn {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 12px 14px;
+        border-radius: 12px;
+      }
+
+      #langDropdown {
+        position: static;
+        margin-top: 4px;
+        min-width: 0;
+        border: none;
+        background: rgba(255,255,255,0.04);
+        backdrop-filter: none;
+        box-shadow: none;
+      }
+
+      .lang-wrap.lang-open #langDropdown { display: block; }
+
+      .nav-bar.nav-open .nav-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+      .nav-bar.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+      .nav-bar.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+      .about-page {
+        padding: 108px 16px 64px;
+      }
+
+      .about-hero {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .about-copy {
+        font-size: 14px;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .content-panel {
+        padding: 28px 22px;
+      }
+
+      .footer {
+        padding: 8px 16px 56px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 560px) {
+      :root { --diagram-scale: 0.66; --diagram-crop-height: 480px; }
+      .mobile-flow { width: min(100%, 360px); }
+      .mobile-large { width: 420px; height: 420px; }
+      .mobile-large.top { margin-top: -228px; margin-bottom: -150px; }
+      .mobile-large.bottom { margin-top: -150px; margin-bottom: -228px; }
+      .mobile-large.top .node-title { margin-top: 158px; }
+      .mobile-large.bottom .node-title { margin-bottom: 158px; }
+      .mobile-ring { width: min(78vw, 280px); height: min(78vw, 280px); }
+      .mobile-center { width: min(54vw, 196px); height: min(54vw, 196px); }
+      .mobile-side { width: min(40vw, 142px); height: min(40vw, 142px); }
+
+      .diagram-wordmark {
+        width: min(64%, 150px);
+      }
+
+      .mobile-side .node-label {
+        font-size: 14px;
+        line-height: 1.35;
+      }
+
+      .mobile-side .node-desc {
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .mobile-caption .caption-copy {
+        max-width: 220px;
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .caption-arrow {
+        width: 64px;
+        height: 28px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      :root { --diagram-scale: 0.56; --diagram-crop-height: 400px; }
+      .about-page {
+        padding: 96px 12px 64px;
+      }
+
+      .mobile-flow { width: min(100%, 320px); row-gap: 18px; }
+      .mobile-large { width: 360px; height: 360px; }
+      .mobile-large.top { margin-top: -198px; margin-bottom: -128px; }
+      .mobile-large.bottom { margin-top: -128px; margin-bottom: -198px; }
+      .mobile-large .node-title { font-size: 16px; }
+      .mobile-large.top .node-title { margin-top: 136px; }
+      .mobile-large.bottom .node-title { margin-bottom: 136px; }
+      .mobile-ring { width: min(78vw, 248px); height: min(78vw, 248px); }
+      .mobile-center { width: min(54vw, 172px); height: min(54vw, 172px); }
+      .mobile-side { width: min(41vw, 128px); height: 128px; padding: 16px 10px; }
+
+      .diagram-wordmark {
+        width: min(62%, 132px);
+      }
+
+      .mobile-side .node-label {
+        font-size: 13px;
+      }
+
+      .mobile-side .node-desc {
+        font-size: 12px;
+      }
+
+      .mobile-caption .caption-copy {
+        max-width: 190px;
+        font-size: 13px;
+      }
+
+      .caption-arrow {
+        width: 56px;
+        height: 24px;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .nav-links { display: flex !important; }
+      .nav-toggle { display: none !important; }
+    }
+
+    /* Footer responsive */
+    @media (max-width: 768px) {
+      .footer-main-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 32px !important;
+      }
+      .footer-main-row > div:last-child {
+        align-items: flex-start !important;
+      }
+      .footer-addr {
+        flex-wrap: wrap !important;
+        white-space: normal !important;
+      }
+    }
+  
+body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* Responsive <br> utilities */
+.br-sm, .br-md, .br-lg { display: none; }
+@media (max-width: 767px) { .br-sm { display: inline; } }
+@media (min-width: 768px) and (max-width: 1023px) { .br-md { display: inline; } }
+@media (min-width: 1024px) { .br-lg { display: inline; } }
+@media (max-width: 767px) { .br-hide-sm { display: none !important; } }
+@media (min-width: 768px) and (max-width: 1023px) { .br-hide-md { display: none !important; } }
+@media (min-width: 1024px) { .br-hide-lg { display: none !important; } }
+/* Convenience combos */
+@media (max-width: 1023px) { .br-lg-only { display: none !important; } }
+@media (min-width: 768px) { .br-sm-only { display: none !important; } }
+
+@media (max-width: 768px) {
+  .footer-main-row img[alt="Infinique"],
+  .footer-main-row img[alt="Dev logo"] { width: 120px !important; }
+}
+
+@media (max-width: 768px) {
+  footer .text-lg { font-size: 12px !important; }
+  footer .footer-copy p, footer .footer-copy { font-size: 11px !important; }
+  footer p { font-size: 11px !important; }
+  footer .footer-addr,
+  footer .footer-addr a,
+  footer .footer-addr span { font-size: 12px !important; }
+  footer .footer-addr a svg { width: 14px !important; height: 14px !important; }
+  footer .footer-addr > .text-lg,
+  footer .footer-addr > a,
+  footer .footer-addr > a span { white-space: nowrap !important; }
+}
+@media (max-width: 360px) {
+  footer .text-lg { font-size: 11px !important; }
+  footer p { font-size: 10px !important; }
+  footer .footer-addr,
+  footer .footer-addr a,
+  footer .footer-addr span { font-size: 11px !important; }
+  footer .footer-addr a svg { width: 12px !important; height: 12px !important; }
+  .footer-main-row img[alt="Infinique"],
+  .footer-main-row img[alt="Dev logo"] { width: 100px !important; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Infinique",
+  "alternateName": "인피니크",
+  "url": "https://infinique.kr/",
+  "logo": "https://infinique.kr/assets/infinique_logo.svg",
+  "image": "https://infinique.kr/assets/og.png",
+  "description": "Presentation design studio specializing in IR decks, company profiles, business plans, proposals, and service decks.",
+  "email": "infinique@infinique.co.kr",
+  "sameAs": ["https://infinique.kr/"],
+  "areaServed": "KR"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Infinique",
+  "url": "https://infinique.kr/about.html",
+  "description": "인피니크는 브랜드와 메시지의 본질을 정리해 설득력 있는 프레젠테이션으로 완성하는 PPT 디자인 스튜디오입니다.",
+  "inLanguage": "ko"
+}
+</script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="nav-bar">
+      <a class="nav-brand" href="./index.html" aria-label="Infinique Home">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1458.99 347.83" style="height:24px;width:auto;">
+          <path fill="#fff" d="M354.46,41.61c3.4-28.62,36-46.81,62.75-39.7,20.08,5.34,29.39,21.57,30.13,41.57l-3.92,1.62c3.14-25.74-25.56-52.37-48.5-31.95-6.08,5.41-12.47,18.39-12.47,26.47v32.43h50.47c2.11,0,9.33,2.32,11.75,3.23,13.5,5.11,18.74,17.44,19.77,31.16,2.78,37.03-2.66,77.69-.08,114.84.83,11.97,4.72,25.42,18.37,22.61,1.81-.37,3.64-.9,5.16-1.51,2.04-.82,3.15-1.36,3.15-1.36l.93,2.51s-10.75,7.1-27.96,4.04-26.26-15.52-27.62-34.29c-2.65-36.65,2.79-77.07.02-113.78-.36-4.83-3.05-22.47-9.48-22.47h-44.48v183.75c0,34.86-3.44,38.76-4.81,41.47-8.15,16.09-27.94,19.9-43.65,15.52-2.54-.71-7.57-3.12-7.57-3.12l.93-2.51s4.51,2.23,8.3,2.87c9.19,1.53,13.39-2.7,16-10.29,1.81-5.27,2.83-19.15,2.83-21.81V77.03h-17.99v-4.99h17.99c.83-9.65-1.12-21.01,0-30.44Z"/>
+          <path fill="#fff" d="M968.14,237.44c-48.64,20.19-112.65,6.16-127.22-48.85-4.59-17.36-5-51.1-2.59-69.01,8.78-65.39,93.9-59.66,117.36-7.65l12.45,34.97v-54.39c0-3.69-4.48-12.89-8.08-14.89-6.44-3.57-10.4-.66-16.28.58-.85.18-1.88,1.44-2.62-.67s-.2-2,1.26-2.72c1.64-.8,7.54-2.27,9.48-2.51,19.65-2.4,37.96,3.84,42.92,24.49,5.14,71.52-2.39,145.8,1.25,217.29.91,17.87,3.63,37.45,27.03,26.39l.93,2.51c-16.35,9.04-42.58,5.75-51.3-12.58-1.67-3.51-4.6-8.34-4.6-30.13v-62.84ZM968.01,237.57c-.3-28.48,2.21-56.67-3.33-84.73-5.46-27.62-17.89-60.33-45.83-71.99-28.52-11.9-46.44,2.78-51.36,30.91-4.07,23.24-3.41,69.83,4.24,91.97,14.92,43.13,57.73,47.61,96.28,33.84Z"/>
+          <path fill="#fff" d="M1346.74,68.35c24.74-1.72,64.98,4.19,77.04,29.27,10.68,22.2-1.21,31.93-20.18,40.47-11.83,5.33-24.46,9.27-36.34,14.61-18.45,8.3-66.04,31.33-67.88,54.04-.66,8.17,17.66,23.7,24.56,27.49,47.3,25.99,108.56-6.85,129.91-51.97l5.01,2.12c-20.87,44.33-67.82,72.41-117.29,66.18-116.57-14.68-111.59-174.08,5.17-182.2ZM1294.96,197.77c.25-2.72,2.04-5.73,3.58-7.91,11.06-15.68,38.56-30.36,55.73-39.16,10.87-5.57,34.72-13.31,41.09-22.84,5.3-7.93,2.48-24.77-1.61-33.18-11.82-24.31-44.9-24.18-65.7-12.07-34.79,20.25-49.19,76.95-34.55,113.19.39.96.12,2.28,1.48,1.98Z"/>
+          <path fill="#fff" d="M1.66,8.18l-1.01-3.98c30.46-9.1,53.51-.36,56.01,33.38,4.46,60.21-3.43,125.85-.02,186.63,1.4,15.67,9.85,24.51,25.48,16.5l1.49,2.46c-3.74,3.2-9.62,4.22-14.45,4.55-23.39,1.6-38.69-9.66-40.56-33.44-4.58-58.34,3.33-122.67.08-181.7C27.67,14.2,24.44-1.97,1.66,8.18Z"/>
+          <path fill="#fff" d="M810.93,240.54l1.81,2.89-1.51.74c-19.5,8.05-46.65,3.61-52.68-19.24-1.07-4.07-2.05-10.42-2.34-14.63-2.43-36.27,2.6-75.62.08-111.85-1.14-16.38-7.21-28.52-25.53-19.44l-1.49-3.95c26.88-8.6,52.54-.68,55,30.39,2.93,36.9-2.8,77.82-.07,114.83.39,5.31,2.04,14.47,5.19,18.77,6.29,8.56,17.54,3.1,20.91,1.77.48-.19.63-.27.63-.27Z"/>
+          <path fill="#fff" d="M716.68,240.66c-19.33,8.99-25.23-3.04-26.44-20.38-2.34-33.6,3.24-71.6-.08-104.7-3.78-37.64-44.79-50.52-77.05-40.25-22.7,7.23-37.57,26.72-45.51,48.37l-7.25,22.2s.07-12.67-.21-24.68c-.02-1.11-.06-2.22-.09-3.33,0-.06,0-.12,0-.17-.04-1.31-.09-2.59-.15-3.83-.05-1.09-.11-2.18-.17-3.27-.04-.73-.09-1.43-.14-2.11-.07-1.02-.12-2.05-.2-3.06-.08-1.02-.2-2-.33-2.97-.1-.84-.19-1.46-.27-1.8-1.02-6-3.02-11-5.77-15.06-.03-.04-.06-.09-.09-.13-.22-.34-.46-.67-.69-.99-5.03-6.74-12.33-10.65-20.8-12.07-.59-.09-1.18-.17-1.78-.23-7.65-.95-16.16.01-24.83,2.73-.14.04-.29.08-.43.13h0s0,0,0,0l1.49,3.95s0,0,0,0h0s.09-.04.13-.06c4.49-2.21,8.24-3.13,11.36-3.03.04,0,.09,0,.13,0,.18.01.37.03.55.04,3.52.29,6.2,1.95,8.2,4.57,3.14,4.11,4.65,10.58,5.15,17.92.41,5.93.61,11.95.68,18.02.37,31.01-2.79,63.49-.76,93.82.05.76.13,1.61.22,2.48.42,3.96,1.23,8.82,2.11,12.15,2.48,9.41,8.55,15.69,16.18,19.27,7.39,3.46,16.24,4.4,24.75,3.17,4.06-.59,8.04-1.66,11.74-3.19l1.51-.74-.45-.71-.8-1.28-.56-.89s-.15.08-.63.27c-.48.19-1.13.47-1.89.77-1.74.69-4.11,1.55-6.68,1.95-.53.08-1.07.14-1.61.18-3.79.27-7.8-.68-10.73-4.67-.63-.86-1.2-1.92-1.71-3.1-.94-2.16-1.68-4.73-2.24-7.3-1.87-12.65-1.12-43.11-.18-56.29,1.58-22.02,11.02-54.72,24.56-72.28,24.76-32.12,73.6-34.27,77.41,14.35,2.49,31.74-2.68,67.14-.02,98.81,2.63,31.4,28.84,41.95,55.94,29.96l-1.57-2.53Z"/>
+          <path fill="#fff" d="M312.82,240.66c-19.33,8.99-25.23-3.04-26.44-20.38-2.34-33.6,3.24-71.6-.08-104.7-3.78-37.64-44.79-50.52-77.05-40.25-22.7,7.23-37.57,26.72-45.51,48.37l-7.25,22.2s.07-12.67-.21-24.68c-.02-1.11-.06-2.22-.09-3.33,0-.06,0-.12,0-.17-.04-1.31-.09-2.59-.15-3.83-.05-1.09-.11-2.18-.17-3.27-.04-.73-.09-1.43-.14-2.11-.07-1.02-.12-2.05-.2-3.06-.08-1.02-.2-2-.33-2.97-.1-.84-.19-1.46-.27-1.8-1.02-6-3.02-11-5.77-15.06-.03-.04-.06-.09-.09-.13-.22-.34-.46-.67-.69-.99-5.03-6.74-12.33-10.65-20.8-12.07-.59-.09-1.18-.17-1.78-.23-7.65-.95-16.16.01-24.83,2.73-.14.04-.29.08-.43.13h0s0,0,0,0l1.49,3.95s0,0,0,0h0s.09-.04.13-.06c4.49-2.21,8.24-3.13,11.36-3.03.04,0,.09,0,.13,0,.18.01.37.03.55.04,3.52.29,6.2,1.95,8.2,4.57,3.14,4.11,4.65,10.58,5.15,17.92.41,5.93.61,11.95.68,18.02.37,31.01-2.79,63.49-.76,93.82.05.76.13,1.61.22,2.48.42,3.96,1.23,8.82,2.11,12.15,2.48,9.41,8.55,15.69,16.18,19.27,7.39,3.46,16.24,4.4,24.75,3.17,4.06-.59,8.04-1.66,11.74-3.19l1.51-.74-.45-.71-.8-1.28-.56-.89s-.15.08-.63.27c-.48.19-1.13.47-1.89.77-1.74.69-4.11,1.55-6.68,1.95-.53.08-1.07.14-1.61.18-3.79.27-7.8-.68-10.73-4.67-.63-.86-1.2-1.92-1.71-3.1-.94-2.16-1.68-4.73-2.24-7.3-1.87-12.65-1.12-43.11-.18-56.29,1.58-22.02,11.02-54.72,24.56-72.28,24.76-32.12,73.6-34.27,77.41,14.35,2.49,31.74-2.68,67.14-.02,98.81,2.63,31.4,28.84,41.95,55.94,29.96l-1.57-2.53Z"/>
+          <path fill="#fff" d="M1244.39,240.56c-.88-.78-14.62,8.16-21.83-1.65-3.15-4.29-4.8-13.46-5.19-18.77-2.72-37.02,3-77.94.07-114.83-2.02-25.42-19.57-35.34-40.62-33.39-1.04.06-2.1.14-3.17.25-1.14.12-4.83.84-7.91,1.79-1.1.3-2.2.61-3.3.96l.1.26,1.27,3.37.12.33c2.69-1.33,5.11-2.19,7.29-2.67,14.13-2.43,16.93,11.14,17.85,26.23,2.51,41.14-4.46,115.52-47.33,135.44-17.52,8.14-39.12,7.4-49.18-11.15-15.89-29.31.1-94.39-7.97-128.76-6.05-25.77-32.63-31.93-54.46-21.45,2.58,4.19,5.42.14,9.56-.41,15.13-2.01,17.62,11.47,18.45,23.32,2.3,33.11-2.92,69.88.09,102.7,3.57,38.97,43.1,52.83,77.05,42.26,23.72-7.39,38.13-28.13,46.51-50.36l7.16-22.91c-.28,10.96-.37,21.84.09,32.5.1,2.19.21,4.37.36,6.54.28,4.21,1.26,10.56,2.34,14.63,6.03,22.85,33.18,27.3,52.68,19.24.21-.05.35-.18.44-.36.48-.89-.34-3.03-.45-3.12Z"/>
+          <path fill="#fff" d="M766.55,58.64c-1.73-15.31-14.14-27.72-29.28-29.27,16.57-3.2,26.24-13.27,29.36-29.37,2.81,16.16,12.48,26.11,28.61,29.28-16.24,2.9-25.78,12.86-28.68,29.36Z"/>
+        </svg>
+      </a>
+      <nav class="nav-links" id="siteNav">
+        <a href="./index.html">Home</a>
+        <a href="./work.html">Work</a>
+        <a class="is-active" href="./about.html">About</a>
+        <a href="./contact.html">Contact</a>
+        <div class="lang-wrap">
+          <button id="langToggle" class="lang-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><ellipse cx="12" cy="12" rx="4" ry="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+            <span id="langLabel">KO</span>
+          </button>
+          <div id="langDropdown">
+            <a href="#" onclick="setLang('ko');return false;">Korean</a>
+            <a href="#" onclick="setLang('en');return false;">English</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="about-page">
+      <div class="about-inner">
+        <section class="about-hero">
+          <div>
+            <p class="about-kicker">Introducing Infinique</p>
+            <h1 class="about-title">About.</h1>
+          </div>
+          <p class="about-copy">인피니크는 단순히 보기 좋은 문서를 만드는 팀이 아니라, 브랜드와 메시지의 본질을 정리하고 목적에 맞는 흐름으로 설계해 설득력 있는 결과물로 완성하는 프레젠테이션 스튜디오입니다.<br>기획, 구조, 디자인, 전달력까지 하나의 흐름으로 연결해 기업과 브랜드의 아이디어가 더 분명하게 이해되고 더 강하게 전달되도록 만듭니다.</p>
+        </section>
+
+        <div class="about-diagram-row">
+        <div class="diagram-crop">
+          <section class="diagram-stage" aria-label="Infinique workflow diagram">
+            <div class="diagram-node large top">
+              <div class="node-copy">
+                <p class="node-title">CLIENTS</p>
+              </div>
+            </div>
+
+            <div class="diagram-halo"></div>
+
+            <div class="diagram-caption top">
+              <div class="caption-arrow"></div>
+              <div class="caption-copy">아이디어 전달</div>
+            </div>
+
+            <div class="diagram-node side left">
+              <div class="node-copy">
+                <p class="node-label">Planning<br>Branding<br>Strategizing</p>
+                <p class="node-desc">전략적 구성 및 기획</p>
+              </div>
+            </div>
+
+            <div class="diagram-node main">
+              <svg class="diagram-wordmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1458.99 347.83" aria-label="Infinique">
+              <path fill="#fff" d="M354.46,41.61c3.4-28.62,36-46.81,62.75-39.7,20.08,5.34,29.39,21.57,30.13,41.57l-3.92,1.62c3.14-25.74-25.56-52.37-48.5-31.95-6.08,5.41-12.47,18.39-12.47,26.47v32.43h50.47c2.11,0,9.33,2.32,11.75,3.23,13.5,5.11,18.74,17.44,19.77,31.16,2.78,37.03-2.66,77.69-.08,114.84.83,11.97,4.72,25.42,18.37,22.61,1.81-.37,3.64-.9,5.16-1.51,2.04-.82,3.15-1.36,3.15-1.36l.93,2.51s-10.75,7.1-27.96,4.04-26.26-15.52-27.62-34.29c-2.65-36.65,2.79-77.07.02-113.78-.36-4.83-3.05-22.47-9.48-22.47h-44.48v183.75c0,34.86-3.44,38.76-4.81,41.47-8.15,16.09-27.94,19.9-43.65,15.52-2.54-.71-7.57-3.12-7.57-3.12l.93-2.51s4.51,2.23,8.3,2.87c9.19,1.53,13.39-2.7,16-10.29,1.81-5.27,2.83-19.15,2.83-21.81V77.03h-17.99v-4.99h17.99c.83-9.65-1.12-21.01,0-30.44Z"/>
+              <path fill="#fff" d="M968.14,237.44c-48.64,20.19-112.65,6.16-127.22-48.85-4.59-17.36-5-51.1-2.59-69.01,8.78-65.39,93.9-59.66,117.36-7.65l12.45,34.97v-54.39c0-3.69-4.48-12.89-8.08-14.89-6.44-3.57-10.4-.66-16.28.58-.85.18-1.88,1.44-2.62-.67s-.2-2,1.26-2.72c1.64-.8,7.54-2.27,9.48-2.51,19.65-2.4,37.96,3.84,42.92,24.49,5.14,71.52-2.39,145.8,1.25,217.29.91,17.87,3.63,37.45,27.03,26.39l.93,2.51c-16.35,9.04-42.58,5.75-51.3-12.58-1.67-3.51-4.6-8.34-4.6-30.13v-62.84ZM968.01,237.57c-.3-28.48,2.21-56.67-3.33-84.73-5.46-27.62-17.89-60.33-45.83-71.99-28.52-11.9-46.44,2.78-51.36,30.91-4.07,23.24-3.41,69.83,4.24,91.97,14.92,43.13,57.73,47.61,96.28,33.84Z"/>
+              <path fill="#fff" d="M1346.74,68.35c24.74-1.72,64.98,4.19,77.04,29.27,10.68,22.2-1.21,31.93-20.18,40.47-11.83,5.33-24.46,9.27-36.34,14.61-18.45,8.3-66.04,31.33-67.88,54.04-.66,8.17,17.66,23.7,24.56,27.49,47.3,25.99,108.56-6.85,129.91-51.97l5.01,2.12c-20.87,44.33-67.82,72.41-117.29,66.18-116.57-14.68-111.59-174.08,5.17-182.2ZM1294.96,197.77c.25-2.72,2.04-5.73,3.58-7.91,11.06-15.68,38.56-30.36,55.73-39.16,10.87-5.57,34.72-13.31,41.09-22.84,5.3-7.93,2.48-24.77-1.61-33.18-11.82-24.31-44.9-24.18-65.7-12.07-34.79,20.25-49.19,76.95-34.55,113.19.39.96.12,2.28,1.48,1.98Z"/>
+              <path fill="#fff" d="M1.66,8.18l-1.01-3.98c30.46-9.1,53.51-.36,56.01,33.38,4.46,60.21-3.43,125.85-.02,186.63,1.4,15.67,9.85,24.51,25.48,16.5l1.49,2.46c-3.74,3.2-9.62,4.22-14.45,4.55-23.39,1.6-38.69-9.66-40.56-33.44-4.58-58.34,3.33-122.67.08-181.7C27.67,14.2,24.44-1.97,1.66,8.18Z"/>
+              <path fill="#fff" d="M810.93,240.54l1.81,2.89-1.51.74c-19.5,8.05-46.65,3.61-52.68-19.24-1.07-4.07-2.05-10.42-2.34-14.63-2.43-36.27,2.6-75.62.08-111.85-1.14-16.38-7.21-28.52-25.53-19.44l-1.49-3.95c26.88-8.6,52.54-.68,55,30.39,2.93,36.9-2.8,77.82-.07,114.83.39,5.31,2.04,14.47,5.19,18.77,6.29,8.56,17.54,3.1,20.91,1.77.48-.19.63-.27.63-.27Z"/>
+              <path fill="#fff" d="M716.68,240.66c-19.33,8.99-25.23-3.04-26.44-20.38-2.34-33.6,3.24-71.6-.08-104.7-3.78-37.64-44.79-50.52-77.05-40.25-22.7,7.23-37.57,26.72-45.51,48.37l-7.25,22.2s.07-12.67-.21-24.68c-.02-1.11-.06-2.22-.09-3.33,0-.06,0-.12,0-.17-.04-1.31-.09-2.59-.15-3.83-.05-1.09-.11-2.18-.17-3.27-.04-.73-.09-1.43-.14-2.11-.07-1.02-.12-2.05-.2-3.06-.08-1.02-.2-2-.33-2.97-.1-.84-.19-1.46-.27-1.8-1.02-6-3.02-11-5.77-15.06-.03-.04-.06-.09-.09-.13-.22-.34-.46-.67-.69-.99-5.03-6.74-12.33-10.65-20.8-12.07-.59-.09-1.18-.17-1.78-.23-7.65-.95-16.16.01-24.83,2.73-.14.04-.29.08-.43.13h0s0,0,0,0l1.49,3.95s0,0,0,0h0s.09-.04.13-.06c4.49-2.21,8.24-3.13,11.36-3.03.04,0,.09,0,.13,0,.18.01.37.03.55.04,3.52.29,6.2,1.95,8.2,4.57,3.14,4.11,4.65,10.58,5.15,17.92.41,5.93.61,11.95.68,18.02.37,31.01-2.79,63.49-.76,93.82.05.76.13,1.61.22,2.48.42,3.96,1.23,8.82,2.11,12.15,2.48,9.41,8.55,15.69,16.18,19.27,7.39,3.46,16.24,4.4,24.75,3.17,4.06-.59,8.04-1.66,11.74-3.19l1.51-.74-.45-.71-.8-1.28-.56-.89s-.15.08-.63.27c-.48.19-1.13.47-1.89.77-1.74.69-4.11,1.55-6.68,1.95-.53.08-1.07.14-1.61.18-3.79.27-7.8-.68-10.73-4.67-.63-.86-1.2-1.92-1.71-3.1-.94-2.16-1.68-4.73-2.24-7.3-1.87-12.65-1.12-43.11-.18-56.29,1.58-22.02,11.02-54.72,24.56-72.28,24.76-32.12,73.6-34.27,77.41,14.35,2.49,31.74-2.68,67.14-.02,98.81,2.63,31.4,28.84,41.95,55.94,29.96l-1.57-2.53Z"/>
+              <path fill="#fff" d="M312.82,240.66c-19.33,8.99-25.23-3.04-26.44-20.38-2.34-33.6,3.24-71.6-.08-104.7-3.78-37.64-44.79-50.52-77.05-40.25-22.7,7.23-37.57,26.72-45.51,48.37l-7.25,22.2s.07-12.67-.21-24.68c-.02-1.11-.06-2.22-.09-3.33,0-.06,0-.12,0-.17-.04-1.31-.09-2.59-.15-3.83-.05-1.09-.11-2.18-.17-3.27-.04-.73-.09-1.43-.14-2.11-.07-1.02-.12-2.05-.2-3.06-.08-1.02-.2-2-.33-2.97-.1-.84-.19-1.46-.27-1.8-1.02-6-3.02-11-5.77-15.06-.03-.04-.06-.09-.09-.13-.22-.34-.46-.67-.69-.99-5.03-6.74-12.33-10.65-20.8-12.07-.59-.09-1.18-.17-1.78-.23-7.65-.95-16.16.01-24.83,2.73-.14.04-.29.08-.43.13h0s0,0,0,0l1.49,3.95s0,0,0,0h0s.09-.04.13-.06c4.49-2.21,8.24-3.13,11.36-3.03.04,0,.09,0,.13,0,.18.01.37.03.55.04,3.52.29,6.2,1.95,8.2,4.57,3.14,4.11,4.65,10.58,5.15,17.92.41,5.93.61,11.95.68,18.02.37,31.01-2.79,63.49-.76,93.82.05.76.13,1.61.22,2.48.42,3.96,1.23,8.82,2.11,12.15,2.48,9.41,8.55,15.69,16.18,19.27,7.39,3.46,16.24,4.4,24.75,3.17,4.06-.59,8.04-1.66,11.74-3.19l1.51-.74-.45-.71-.8-1.28-.56-.89s-.15.08-.63.27c-.48.19-1.13.47-1.89.77-1.74.69-4.11,1.55-6.68,1.95-.53.08-1.07.14-1.61.18-3.79.27-7.8-.68-10.73-4.67-.63-.86-1.2-1.92-1.71-3.1-.94-2.16-1.68-4.73-2.24-7.3-1.87-12.65-1.12-43.11-.18-56.29,1.58-22.02,11.02-54.72,24.56-72.28,24.76-32.12,73.6-34.27,77.41,14.35,2.49,31.74-2.68,67.14-.02,98.81,2.63,31.4,28.84,41.95,55.94,29.96l-1.57-2.53Z"/>
+              <path fill="#fff" d="M1244.39,240.56c-.88-.78-14.62,8.16-21.83-1.65-3.15-4.29-4.8-13.46-5.19-18.77-2.72-37.02,3-77.94.07-114.83-2.02-25.42-19.57-35.34-40.62-33.39-1.04.06-2.1.14-3.17.25-1.14.12-4.83.84-7.91,1.79-1.1.3-2.2.61-3.3.96l.1.26,1.27,3.37.12.33c2.69-1.33,5.11-2.19,7.29-2.67,14.13-2.43,16.93,11.14,17.85,26.23,2.51,41.14-4.46,115.52-47.33,135.44-17.52,8.14-39.12,7.4-49.18-11.15-15.89-29.31.1-94.39-7.97-128.76-6.05-25.77-32.63-31.93-54.46-21.45,2.58,4.19,5.42.14,9.56-.41,15.13-2.01,17.62,11.47,18.45,23.32,2.3,33.11-2.92,69.88.09,102.7,3.57,38.97,43.1,52.83,77.05,42.26,23.72-7.39,38.13-28.13,46.51-50.36l7.16-22.91c-.28,10.96-.37,21.84.09,32.5.1,2.19.21,4.37.36,6.54.28,4.21,1.26,10.56,2.34,14.63,6.03,22.85,33.18,27.3,52.68,19.24.21-.05.35-.18.44-.36.48-.89-.34-3.03-.45-3.12Z"/>
+              <path fill="#fff" d="M766.55,58.64c-1.73-15.31-14.14-27.72-29.28-29.27,16.57-3.2,26.24-13.27,29.36-29.37,2.81,16.16,12.48,26.11,28.61,29.28-16.24,2.9-25.78,12.86-28.68,29.36Z"/>
+              </svg>
+            </div>
+
+            <div class="diagram-node side right">
+              <div class="node-copy">
+                <p class="node-label">Creative<br>Unique<br>Design</p>
+                <p class="node-desc">완성도 높은 디자인</p>
+              </div>
+            </div>
+
+            <div class="diagram-caption bottom">
+              <div class="caption-copy">메세지와 가독성이 있는 결과물</div>
+              <div class="caption-arrow"></div>
+            </div>
+
+            <div class="diagram-node large bottom">
+              <div class="node-copy">
+                <p class="node-title">SUCCESSFUL PROJECTS</p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <aside class="about-intro">
+          <p class="about-intro-kicker">HOW INFINIQUE WORKS</p>
+          <h2 class="about-intro-title">Infinite + Boutique,<br>Infinique</h2>
+          <p class="about-intro-lead">클라이언트의 성공, 단 하나의 목표를 향한 항해를 함께합니다.<br>무한한 확장과 성공을 위한 당신의 파트너, 인피니크.</p>
+          <div class="about-intro-body">
+            <p>인피니크는 글로벌 No.1 브랜딩 에이전시 출신 기획자를 중심으로<br>10년 이상의 경력을 가진 디자이너들과 창의적이고 유능한 각 분야의 디자이너들이 모여 설립한 디자인 스튜디오입니다.</p>
+            <p>국내 다수의 대기업과 협업 프로젝트를 수행했으며 정부 주최 주민등록증 디자인 공모전 본선 7팀에 선정되는 등<br>디자인 경쟁력을 입증했습니다.</p>
+            <p>깊이 있는 경험과 날카로운 인사이트를 바탕으로, 브랜드의 진정성을 담아내는 디자인 솔루션을 제공합니다.<br>인피니크는 디자인을 통해 고객과의 연결을 창조하고, 감각적이면서도 전략적인 접근으로 브랜드의 가치를 극대화합니다.</p>
+            <p>끊임없이 변화하는 디지털 환경 속에서도 변치 않는 창의성과 혁신으로 차별화된 디자인 경험을 선사합니다.<br>차별화된 감각과 노하우를 바탕으로, 브랜드의 스토리를 세상과 소통하게 만드는 힘을 믿습니다.</p>
+            <p>인피니크와 함께 무한한 가능성을 탐험해보세요.</p>
+          </div>
+        </aside>
+
+        </div><!-- /about-diagram-row -->
+
+        <section class="diagram-mobile" aria-label="Infinique workflow diagram mobile">
+          <img class="diagram-mobile-image" src="./assets/about.png" alt="Infinique workflow diagram">
+          <div class="mobile-flow">
+            <div class="mobile-large top">
+              <p class="node-title">CLIENTS</p>
+            </div>
+
+            <div class="mobile-caption top">
+              <div class="caption-arrow"></div>
+              <div class="caption-copy">아이디어 전달</div>
+            </div>
+
+            <div class="mobile-ring"></div>
+
+            <div class="mobile-center">
+              <svg class="diagram-wordmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1458.99 347.83" aria-label="Infinique">
+                <path fill="#fff" d="M354.46,41.61c3.4-28.62,36-46.81,62.75-39.7,20.08,5.34,29.39,21.57,30.13,41.57l-3.92,1.62c3.14-25.74-25.56-52.37-48.5-31.95-6.08,5.41-12.47,18.39-12.47,26.47v32.43h50.47c2.11,0,9.33,2.32,11.75,3.23,13.5,5.11,18.74,17.44,19.77,31.16,2.78,37.03-2.66,77.69-.08,114.84.83,11.97,4.72,25.42,18.37,22.61,1.81-.37,3.64-.9,5.16-1.51,2.04-.82,3.15-1.36,3.15-1.36l.93,2.51s-10.75,7.1-27.96,4.04-26.26-15.52-27.62-34.29c-2.65-36.65,2.79-77.07.02-113.78-.36-4.83-3.05-22.47-9.48-22.47h-44.48v183.75c0,34.86-3.44,38.76-4.81,41.47-8.15,16.09-27.94,19.9-43.65,15.52-2.54-.71-7.57-3.12-7.57-3.12l.93-2.51s4.51,2.23,8.3,2.87c9.19,1.53,13.39-2.7,16-10.29,1.81-5.27,2.83-19.15,2.83-21.81V77.03h-17.99v-4.99h17.99c.83-9.65-1.12-21.01,0-30.44Z"/>
+                <path fill="#fff" d="M968.14,237.44c-48.64,20.19-112.65,6.16-127.22-48.85-4.59-17.36-5-51.1-2.59-69.01,8.78-65.39,93.9-59.66,117.36-7.65l12.45,34.97v-54.39c0-3.69-4.48-12.89-8.08-14.89-6.44-3.57-10.4-.66-16.28.58-.85.18-1.88,1.44-2.62-.67s-.2-2,1.26-2.72c1.64-.8,7.54-2.27,9.48-2.51,19.65-2.4,37.96,3.84,42.92,24.49,5.14,71.52-2.39,145.8,1.25,217.29.91,17.87,3.63,37.45,27.03,26.39l.93,2.51c-16.35,9.04-42.58,5.75-51.3-12.58-1.67-3.51-4.6-8.34-4.6-30.13v-62.84ZM968.01,237.57c-.3-28.48,2.21-56.67-3.33-84.73-5.46-27.62-17.89-60.33-45.83-71.99-28.52-11.9-46.44,2.78-51.36,30.91-4.07,23.24-3.41,69.83,4.24,91.97,14.92,43.13,57.73,47.61,96.28,33.84Z"/>
+                <path fill="#fff" d="M1346.74,68.35c24.74-1.72,64.98,4.19,77.04,29.27,10.68,22.2-1.21,31.93-20.18,40.47-11.83,5.33-24.46,9.27-36.34,14.61-18.45,8.3-66.04,31.33-67.88,54.04-.66,8.17,17.66,23.7,24.56,27.49,47.3,25.99,108.56-6.85,129.91-51.97l5.01,2.12c-20.87,44.33-67.82,72.41-117.29,66.18-116.57-14.68-111.59-174.08,5.17-182.2ZM1294.96,197.77c.25-2.72,2.04-5.73,3.58-7.91,11.06-15.68,38.56-30.36,55.73-39.16,10.87-5.57,34.72-13.31,41.09-22.84,5.3-7.93,2.48-24.77-1.61-33.18-11.82-24.31-44.9-24.18-65.7-12.07-34.79,20.25-49.19,76.95-34.55,113.19.39.96.12,2.28,1.48,1.98Z"/>
+                <path fill="#fff" d="M1.66,8.18l-1.01-3.98c30.46-9.1,53.51-.36,56.01,33.38,4.46,60.21-3.43,125.85-.02,186.63,1.4,15.67,9.85,24.51,25.48,16.5l1.49,2.46c-3.74,3.2-9.62,4.22-14.45,4.55-23.39,1.6-38.69-9.66-40.56-33.44-4.58-58.34,3.33-122.67.08-181.7C27.67,14.2,24.44-1.97,1.66,8.18Z"/>
+                <path fill="#fff" d="M810.93,240.54l1.81,2.89-1.51.74c-19.5,8.05-46.65,3.61-52.68-19.24-1.07-4.07-2.05-10.42-2.34-14.63-2.43-36.27,2.6-75.62.08-111.85-1.14-16.38-7.21-28.52-25.53-19.44l-1.49-3.95c26.88-8.6,52.54-.68,55,30.39,2.93,36.9-2.8,77.82-.07,114.83.39,5.31,2.04,14.47,5.19,18.77,6.29,8.56,17.54,3.1,20.91,1.77.48-.19.63-.27.63-.27Z"/>
+                <path fill="#fff" d="M716.68,240.66c-19.33,8.99-25.23-3.04-26.44-20.38-2.34-33.6,3.24-71.6-.08-104.7-3.78-37.64-44.79-50.52-77.05-40.25-22.7,7.23-37.57,26.72-45.51,48.37l-7.25,22.2s.07-12.67-.21-24.68c-.02-1.11-.06-2.22-.09-3.33,0-.06,0-.12,0-.17-.04-1.31-.09-2.59-.15-3.83-.05-1.09-.11-2.18-.17-3.27-.04-.73-.09-1.43-.14-2.11-.07-1.02-.12-2.05-.2-3.06-.08-1.02-.2-2-.33-2.97-.1-.84-.19-1.46-.27-1.8-1.02-6-3.02-11-5.77-15.06-.03-.04-.06-.09-.09-.13-.22-.34-.46-.67-.69-.99-5.03-6.74-12.33-10.65-20.8-12.07-.59-.09-1.18-.17-1.78-.23-7.65-.95-16.16.01-24.83,2.73-.14.04-.29.08-.43.13h0s0,0,0,0l1.49,3.95s0,0,0,0h0s.09-.04.13-.06c4.49-2.21,8.24-3.13,11.36-3.03.04,0,.09,0,.13,0,.18.01.37.03.55.04,3.52.29,6.2,1.95,8.2,4.57,3.14,4.11,4.65,10.58,5.15,17.92.41,5.93.61,11.95.68,18.02.37,31.01-2.79,63.49-.76,93.82.05.76.13,1.61.22,2.48.42,3.96,1.23,8.82,2.11,12.15,2.48,9.41,8.55,15.69,16.18,19.27,7.39,3.46,16.24,4.4,24.75,3.17,4.06-.59,8.04-1.66,11.74-3.19l1.51-.74-.45-.71-.8-1.28-.56-.89s-.15.08-.63.27c-.48.19-1.13.47-1.89.77-1.74.69-4.11,1.55-6.68,1.95-.53.08-1.07.14-1.61.18-3.79.27-7.8-.68-10.73-4.67-.63-.86-1.2-1.92-1.71-3.1-.94-2.16-1.68-4.73-2.24-7.3-1.87-12.65-1.12-43.11-.18-56.29,1.58-22.02,11.02-54.72,24.56-72.28,24.76-32.12,73.6-34.27,77.41,14.35,2.49,31.74-2.68,67.14-.02,98.81,2.63,31.4,28.84,41.95,55.94,29.96l-1.57-2.53Z"/>
+                <path fill="#fff" d="M312.82,240.66c-19.33,8.99-25.23-3.04-26.44-20.38-2.34-33.6,3.24-71.6-.08-104.7-3.78-37.64-44.79-50.52-77.05-40.25-22.7,7.23-37.57,26.72-45.51,48.37l-7.25,22.2s.07-12.67-.21-24.68c-.02-1.11-.06-2.22-.09-3.33,0-.06,0-.12,0-.17-.04-1.31-.09-2.59-.15-3.83-.05-1.09-.11-2.18-.17-3.27-.04-.73-.09-1.43-.14-2.11-.07-1.02-.12-2.05-.2-3.06-.08-1.02-.2-2-.33-2.97-.1-.84-.19-1.46-.27-1.8-1.02-6-3.02-11-5.77-15.06-.03-.04-.06-.09-.09-.13-.22-.34-.46-.67-.69-.99-5.03-6.74-12.33-10.65-20.8-12.07-.59-.09-1.18-.17-1.78-.23-7.65-.95-16.16.01-24.83,2.73-.14.04-.29.08-.43.13h0s0,0,0,0l1.49,3.95s0,0,0,0h0s.09-.04.13-.06c4.49-2.21,8.24-3.13,11.36-3.03.04,0,.09,0,.13,0,.18.01.37.03.55.04,3.52.29,6.2,1.95,8.2,4.57,3.14,4.11,4.65,10.58,5.15,17.92.41,5.93.61,11.95.68,18.02.37,31.01-2.79,63.49-.76,93.82.05.76.13,1.61.22,2.48.42,3.96,1.23,8.82,2.11,12.15,2.48,9.41,8.55,15.69,16.18,19.27,7.39,3.46,16.24,4.4,24.75,3.17,4.06-.59,8.04-1.66,11.74-3.19l1.51-.74-.45-.71-.8-1.28-.56-.89s-.15.08-.63.27c-.48.19-1.13.47-1.89.77-1.74.69-4.11,1.55-6.68,1.95-.53.08-1.07.14-1.61.18-3.79.27-7.8-.68-10.73-4.67-.63-.86-1.2-1.92-1.71-3.1-.94-2.16-1.68-4.73-2.24-7.3-1.87-12.65-1.12-43.11-.18-56.29,1.58-22.02,11.02-54.72,24.56-72.28,24.76-32.12,73.6-34.27,77.41,14.35,2.49,31.74-2.68,67.14-.02,98.81,2.63,31.4,28.84,41.95,55.94,29.96l-1.57-2.53Z"/>
+                <path fill="#fff" d="M1244.39,240.56c-.88-.78-14.62,8.16-21.83-1.65-3.15-4.29-4.8-13.46-5.19-18.77-2.72-37.02,3-77.94.07-114.83-2.02-25.42-19.57-35.34-40.62-33.39-1.04.06-2.1.14-3.17.25-1.14.12-4.83.84-7.91,1.79-1.1.3-2.2.61-3.3.96l.1.26,1.27,3.37.12.33c2.69-1.33,5.11-2.19,7.29-2.67,14.13-2.43,16.93,11.14,17.85,26.23,2.51,41.14-4.46,115.52-47.33,135.44-17.52,8.14-39.12,7.4-49.18-11.15-15.89-29.31.1-94.39-7.97-128.76-6.05-25.77-32.63-31.93-54.46-21.45,2.58,4.19,5.42.14,9.56-.41,15.13-2.01,17.62,11.47,18.45,23.32,2.3,33.11-2.92,69.88.09,102.7,3.57,38.97,43.1,52.83,77.05,42.26,23.72-7.39,38.13-28.13,46.51-50.36l7.16-22.91c-.28,10.96-.37,21.84.09,32.5.1,2.19.21,4.37.36,6.54.28,4.21,1.26,10.56,2.34,14.63,6.03,22.85,33.18,27.3,52.68,19.24.21-.05.35-.18.44-.36.48-.89-.34-3.03-.45-3.12Z"/>
+                <path fill="#fff" d="M766.55,58.64c-1.73-15.31-14.14-27.72-29.28-29.27,16.57-3.2,26.24-13.27,29.36-29.37,2.81,16.16,12.48,26.11,28.61,29.28-16.24,2.9-25.78,12.86-28.68,29.36Z"/>
+              </svg>
+            </div>
+
+            <div class="mobile-side left">
+              <div class="node-copy">
+                <p class="node-label">Planning<br>Branding<br>Strategizing</p>
+                <p class="node-desc">전략적 구성 및 기획</p>
+              </div>
+            </div>
+
+            <div class="mobile-side right">
+              <div class="node-copy">
+                <p class="node-label">Creative<br>Unique<br>Design</p>
+                <p class="node-desc">완성도 높은 디자인</p>
+              </div>
+            </div>
+
+            <div class="mobile-caption bottom">
+              <div class="caption-arrow"></div>
+              <div class="caption-copy">메세지와 가독성이 있는 결과물</div>
+            </div>
+
+            <div class="mobile-large bottom">
+              <p class="node-title">SUCCESSFUL PROJECTS</p>
+            </div>
+          </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section class="about-split">
+          <div class="about-split-text">
+            <p class="about-intro-kicker">All It Takes Is One Idea.</p>
+            <h2 class="about-intro-title">A single spark is<br>all we need to start.</h2>
+            <p class="about-intro-lead">아이디어의 크기는 중요하지 않습니다.</p>
+            <div class="about-intro-body">
+              <p>단 한 줄의 방향만 있어도, 인피니크는 그것이 어떤 맥락에서 전달되어야 하는지 먼저 파악합니다.</p>
+              <p>타겟은 누구인지, 무엇을 느끼게 해야 하는지, 어떤 구조로 풀어야 설득력이 생기는지 — 기획의 모든 단계를 충분히 고민합니다.</p>
+              <p>그 논리를 가독성 높은 디자인으로 구현해, 단순히 예쁜 자료가 아닌 메시지가 살아있는 하나의 커뮤니케이션으로 완성합니다.</p>
+            </div>
+          </div>
+          <div class="about-split-image">
+            <div class="ba-carousel" id="baCarousel">
+              <div class="ba-track" id="baTrack">
+                <div class="ba-slide">
+                  <div class="ba-slider">
+                    <img class="ba-before" src="./assets/after1.png" alt="After">
+                    <img class="ba-after" src="./assets/before1.png" alt="Before">
+                    <div class="ba-handle">
+                      <span class="ba-label before">BEFORE</span>
+                      <div class="ba-knob">
+                        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M7 4L2 10L7 16" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M13 4L18 10L13 16" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
+                      <span class="ba-label after">AFTER</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="ba-slide">
+                  <div class="ba-slider">
+                    <img class="ba-before" src="./assets/after2.png" alt="After">
+                    <img class="ba-after" src="./assets/before2.png" alt="Before">
+                    <div class="ba-handle">
+                      <span class="ba-label before">BEFORE</span>
+                      <div class="ba-knob">
+                        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M7 4L2 10L7 16" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M13 4L18 10L13 16" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
+                      <span class="ba-label after">AFTER</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="ba-slide">
+                  <div class="ba-slider">
+                    <img class="ba-before" src="./assets/after3.png" alt="After">
+                    <img class="ba-after" src="./assets/before3.png" alt="Before">
+                    <div class="ba-handle">
+                      <span class="ba-label before">BEFORE</span>
+                      <div class="ba-knob">
+                        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M7 4L2 10L7 16" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M13 4L18 10L13 16" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
+                      <span class="ba-label after">AFTER</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="ba-nav prev" id="baPrev" aria-label="Previous">
+                <svg viewBox="0 0 20 20" fill="none"><path d="M12 4L6 10L12 16" stroke="rgba(0,0,0,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button class="ba-nav next" id="baNext" aria-label="Next">
+                <svg viewBox="0 0 20 20" fill="none"><path d="M8 4L14 10L8 16" stroke="rgba(0,0,0,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="ba-dots" id="baDots">
+                <button class="ba-dot active" data-idx="0" aria-label="Slide 1"></button>
+                <button class="ba-dot" data-idx="1" aria-label="Slide 2"></button>
+                <button class="ba-dot" data-idx="2" aria-label="Slide 3"></button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section class="about-clients">
+          <div class="about-partners-row">
+            <div class="about-clients-wrap">
+              <div class="clients-grid" id="clientsGrid"></div>
+            </div>
+            <aside class="about-intro">
+              <p class="about-intro-kicker">PARTNERS</p>
+              <h2 class="about-intro-title">Trusted by<br>Leading Brands</h2>
+              <p class="about-intro-lead">스타트업부터 글로벌 기업까지,<br>다양한 브랜드와 함께 성장해왔습니다.</p>
+              <div class="about-intro-body">
+                <p>인피니크는 지난 수년간 국내외의 많은 클라이언트와 협업하며 성공하는 프로젝트를 위한 고퀄리티 PPT를 만들어왔습니다.</p>
+                <p>업종과 규모에 관계없이 회사와 브랜드의 가치를 극대화할 수 있도록 축적된 경험과 노하우로 프로젝트의 성공을 위해<br>더 효과적인, 최고의 결과물을 만들어냅니다.</p>
+              </div>
+            </aside>
+          </div>
+        </section>
+      </div>
+      </div>
+    </main>
+
+      <div id="footer-placeholder"></div>
+<script src="./assets/footer.js"></script>
+  </div>
+
+  <script>
+  (function(){
+    var navBar = document.querySelector('.nav-bar');
+    var nav = navBar ? navBar.querySelector('nav') : null;
+    var btn = document.getElementById('langToggle');
+    var dd = document.getElementById('langDropdown');
+    var langWrap = btn ? btn.parentElement : null;
+    var navToggle;
+    var mobileQuery = window.matchMedia('(max-width: 768px)');
+
+    function closeMenu() {
+      if (!navBar || !navToggle) return;
+      navBar.classList.remove('nav-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+    function closeLang() {
+      if (!dd) return;
+      dd.style.display = 'none';
+      if (langWrap) langWrap.classList.remove('lang-open');
+    }
+    function syncNavMode() {
+      if (!mobileQuery.matches) { closeMenu(); closeLang(); }
+    }
+
+    if (navBar && nav) {
+      navToggle = document.createElement('button');
+      navToggle.type = 'button';
+      navToggle.className = 'nav-toggle';
+      navToggle.setAttribute('aria-label', 'Toggle menu');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-controls', 'siteNav');
+      navToggle.innerHTML = '<span></span><span></span><span></span>';
+      navBar.appendChild(navToggle);
+      navToggle.addEventListener('click', function(e){
+        e.stopPropagation();
+        var open = navBar.classList.toggle('nav-open');
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (!open) closeLang();
+      });
+    }
+    if (btn && dd) {
+      btn.addEventListener('click', function(e){
+        e.stopPropagation();
+        if (mobileQuery.matches && langWrap) {
+          var isOpen = langWrap.classList.toggle('lang-open');
+          dd.style.display = isOpen ? 'block' : 'none';
+          return;
+        }
+        dd.style.display = dd.style.display === 'block' ? 'none' : 'block';
+      });
+    }
+    document.addEventListener('click', function(e){
+      closeLang();
+      if (navBar && navBar.classList.contains('nav-open') && navToggle && !navBar.contains(e.target)) closeMenu();
+    });
+    if (mobileQuery.addEventListener) { mobileQuery.addEventListener('change', syncNavMode); }
+    else if (mobileQuery.addListener) { mobileQuery.addListener(syncNavMode); }
+    window.addEventListener('resize', syncNavMode);
+    syncNavMode();
+  })();
+  function setLang(lang){
+    if (lang === 'en') { window.location.href = './en/about.html'; return; }
+    var dropdown = document.getElementById('langDropdown');
+    var label = document.getElementById('langLabel');
+    if (dropdown) { dropdown.style.display = 'none'; if (dropdown.parentElement) dropdown.parentElement.classList.remove('lang-open'); }
+    if (label) label.textContent = lang.toUpperCase();
+  }
+  </script>
+  <script>
+  (function(){
+    var wrap = document.querySelector('.about-clients-wrap');
+    if (!wrap) return;
+    var obs = new IntersectionObserver(function(entries){
+      if (entries[0].isIntersecting) { wrap.classList.add('visible'); obs.disconnect(); }
+    }, { threshold: 0.2 });
+    obs.observe(wrap);
+  })();
+
+  (function(){
+    var grid = document.getElementById('clientsGrid');
+    if (!grid) return;
+    var DEFAULT_COUNT = 14;
+
+    function tile(c) {
+      var s = '<div class="client-tile">';
+      if (c && c.logo) {
+        s += '<img src="' + c.logo + '" alt="' + (c.name || '') + '">';
+      }
+      return s + '</div>';
+    }
+    function render(clients) {
+      while (clients.length < DEFAULT_COUNT) clients.push({ name:'', logo:'' });
+      var rowCounts = [5, 4, 5];
+      var idx = 0;
+      var html = '';
+      rowCounts.forEach(function(n, r) {
+        html += '<div class="clients-row' + (r === 1 ? ' clients-row-offset' : '') + '">';
+        for (var i = 0; i < n; i++) html += tile(clients[idx++]);
+        html += '</div>';
+      });
+      grid.innerHTML = html;
+    }
+
+    var SB_URL = 'https://umzfjxrrotvwcmurzduz.supabase.co';
+    var SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVtemZqeHJyb3R2d2NtdXJ6ZHV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY0NTEzMDcsImV4cCI6MjA5MjAyNzMwN30.TR0lKwZeC1_AONrfNgJLYWOykq8u5RBYFGc4q_xpfak';
+    fetch(SB_URL + '/rest/v1/clients?select=*&order=slot', { headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY } })
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(data){
+        var arr = [];
+        (data || []).forEach(function(r){ arr[r.slot] = { name: r.name || '', logo: r.logo || '' }; });
+        try { localStorage.setItem('iq_clients', JSON.stringify(arr)); } catch(e) {}
+        render(arr);
+      })
+      .catch(function(){
+        var raw = localStorage.getItem('iq_clients');
+        var cache = null;
+        try { cache = raw ? JSON.parse(raw) : null; } catch(e) {}
+        render(cache && cache.length ? cache : []);
+      });
+  })();
+
+  (function(){
+    var carousel = document.getElementById('baCarousel');
+    if (!carousel) return;
+    var track = document.getElementById('baTrack');
+    var prevBtn = document.getElementById('baPrev');
+    var nextBtn = document.getElementById('baNext');
+    var dots = carousel.querySelectorAll('.ba-dot');
+    var sliders = carousel.querySelectorAll('.ba-slider');
+    var currentIdx = 0;
+    var autoPlayed = false;
+
+    function initSlider(slider) {
+      var after = slider.querySelector('.ba-after');
+      var handle = slider.querySelector('.ba-handle');
+      var knob = slider.querySelector('.ba-knob');
+      var pct = 0;
+      var dragging = false;
+
+      function setPos(x) {
+        var rect = slider.getBoundingClientRect();
+        pct = Math.min(100, Math.max(0, (x - rect.left) / rect.width * 100));
+        apply();
+      }
+      function apply() {
+        after.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+        handle.style.left = pct + '%';
+      }
+      apply();
+
+      slider.addEventListener('mousedown', function(e){ dragging = true; setPos(e.clientX); });
+      window.addEventListener('mousemove', function(e){ if (dragging) setPos(e.clientX); });
+      window.addEventListener('mouseup', function(){ dragging = false; });
+      slider.addEventListener('touchstart', function(e){ dragging = true; setPos(e.touches[0].clientX); }, {passive:true});
+      window.addEventListener('touchmove', function(e){ if (dragging) setPos(e.touches[0].clientX); }, {passive:true});
+      window.addEventListener('touchend', function(){ dragging = false; });
+
+      return {
+        sweep: function() {
+          var start = null;
+          var duration = 1800;
+          var keyframes = [0, 100, 0];
+          var segDuration = duration / (keyframes.length - 1);
+          function step(ts) {
+            if (!start) start = ts;
+            var elapsed = ts - start;
+            var seg = Math.min(Math.floor(elapsed / segDuration), keyframes.length - 2);
+            var segPct = (elapsed - seg * segDuration) / segDuration;
+            var t = segPct < 0.5 ? 2*segPct*segPct : -1+(4-2*segPct)*segPct;
+            pct = keyframes[seg] + (keyframes[seg+1] - keyframes[seg]) * t;
+            apply();
+            if (elapsed < segDuration * (keyframes.length - 1)) {
+              requestAnimationFrame(step);
+            }
+          }
+          setTimeout(function(){ requestAnimationFrame(step); }, 600);
+        }
+      };
+    }
+
+    var sliderApis = Array.prototype.map.call(sliders, initSlider);
+
+    function goTo(idx, skipSweep) {
+      currentIdx = (idx + sliders.length) % sliders.length;
+      track.style.transform = 'translateX(-' + (currentIdx * 100) + '%)';
+      dots.forEach(function(d, i){ d.classList.toggle('active', i === currentIdx); });
+      if (!skipSweep) sliderApis[currentIdx].sweep();
+    }
+
+    prevBtn.addEventListener('click', function(){ goTo(currentIdx - 1); });
+    nextBtn.addEventListener('click', function(){ goTo(currentIdx + 1); });
+    dots.forEach(function(dot){
+      dot.addEventListener('click', function(){
+        goTo(parseInt(dot.getAttribute('data-idx'), 10));
+      });
+    });
+
+    var baObs = new IntersectionObserver(function(entries){
+      if (entries[0].isIntersecting && !autoPlayed) {
+        autoPlayed = true;
+        sliderApis[0].sweep();
+        baObs.disconnect();
+      }
+    }, { threshold: 0.4 });
+    baObs.observe(carousel);
+  })();
+
+  (function(){
+    var stage = document.querySelector('.diagram-stage');
+    if (!stage) return;
+    var triggered = false;
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting && !triggered) {
+          triggered = true;
+          stage.classList.add('dg-animate');
+          obs.disconnect();
+        }
+      });
+    }, { threshold: 0.25 });
+    obs.observe(stage);
+  })();
+  </script>
+</body>
+</html>

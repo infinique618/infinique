@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Infinique — Presentation Design Studio | Strategy, Structure, Design</title>
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+  <meta name="description" content="Infinique is a presentation design studio connecting strategy, structure, and visual design into one seamless flow. IR decks, company profiles, business plans, proposals, and service decks — crafted for clarity and persuasion.">
+  <meta name="keywords" content="presentation design, PPT design studio, investor deck design, pitch deck, company profile design, business plan design, Infinique">
+  <meta name="author" content="Infinique">
+  <link rel="canonical" href="https://infinique.kr/en/">
+  <link rel="alternate" hreflang="ko" href="https://infinique.kr/">
+  <link rel="alternate" hreflang="en" href="https://infinique.kr/en/">
+  <link rel="alternate" hreflang="x-default" href="https://infinique.kr/">
+  <meta property="og:title" content="Infinique — Presentation Design Studio">
+  <meta property="og:description" content="Presentation design studio connecting strategy, structure, and visual design into one seamless flow.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://infinique.kr/en/">
+  <meta property="og:site_name" content="Infinique">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ko_KR">
+  <meta property="og:image" content="https://infinique.kr/assets/og.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1120">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Infinique — Presentation Design Studio">
+  <meta name="twitter:description" content="Strategy, structure, and design — one seamless flow for every presentation.">
+  <meta name="twitter:image" content="https://infinique.kr/assets/og.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://umzfjxrrotvwcmurzduz.supabase.co">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/70085daa54d49f05a0f0ca04076f60814897b7f6.css">
+  <style>
+    html, body { margin:0; width:100%; max-width:100%; overflow-x:hidden; background:#000; color:#fff; }
+    *, *::before, *::after { box-sizing:border-box; }
+    body, p, a, span, button, input, textarea, li { font-family:Pretendard,-apple-system,BlinkMacSystemFont,system-ui,Roboto,"Helvetica Neue","Segoe UI","Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif; }
+
+    .card-overlay { position:absolute; inset:0; background:rgba(0,0,0,0.6); transition:opacity 0.5s ease; pointer-events:none; }
+    .group:hover .card-overlay { opacity:0; }
+    #mainWorkGrid .card-name,
+    #mainWorkGrid .card-type {
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      overflow-wrap: normal !important;
+      word-break: normal !important;
+      min-width: 0;
+    }
+    #mainWorkGrid .card-name { flex: 1 1 auto; }
+    #mainWorkGrid .card-type { flex: 0 0 auto; }
+
+    .work-reveal { opacity:0; transform:translateY(28px); filter:blur(8px); transition:opacity 0.7s ease, transform 0.7s ease, filter 0.7s ease; transition-delay:var(--work-delay,0s); }
+    .work-reveal.work-reveal-in { opacity:1; transform:translateY(0); filter:blur(0); }
+
+    /* Nav */
+    .nav-bar { position:fixed; top:0; left:0; right:0; z-index:1000; display:flex; align-items:center; justify-content:space-between; gap:24px; min-height:64px; padding:12px 20px; border-bottom:1px solid rgba(255,255,255,0.08); background:rgba(0,0,0,0.88); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
+    .nav-bar > a { display:flex; align-items:center; flex:0 0 auto; max-width:160px; }
+    .nav-bar > a svg { display:block; height:24px; width:auto; }
+    .nav-links { display:flex; align-items:center; gap:12px; margin-left:auto; }
+    .nav-links a { display:inline-flex; align-items:center; justify-content:center; min-height:36px; padding:0 14px; border-radius:999px; font-size:13px; font-weight:600; color:#fff; text-decoration:none; transition:background 0.2s ease, color 0.2s ease; }
+    .nav-links a:hover { background:#444; }
+    .nav-links a.is-active { background:#fff; color:#000; }
+    .lang-wrap { position:relative; flex:0 0 auto; }
+    .lang-btn { display:inline-flex; align-items:center; gap:6px; min-height:36px; padding:0 14px; border-radius:999px; font-size:13px; font-weight:600; color:#fff; background:none; border:none; cursor:pointer; transition:background 0.2s ease; }
+    .lang-btn:hover { background:#444; }
+    #langDropdown { display:none; position:absolute; right:0; top:calc(100% + 8px); min-width:132px; background:rgba(0,0,0,0.92); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.15); border-radius:10px; overflow:hidden; z-index:100; }
+    #langDropdown a { display:block; padding:10px 16px; color:#fff; font-size:13px; font-weight:500; text-decoration:none; transition:background 0.2s; border-radius:0; }
+    #langDropdown a:hover { background:rgba(255,255,255,0.1); }
+    .nav-toggle { display:none; align-items:center; justify-content:center; flex-direction:column; width:42px; height:42px; border:1px solid rgba(255,255,255,0.14); border-radius:12px; background:rgba(255,255,255,0.03); cursor:pointer; gap:4px; flex-shrink:0; }
+    .nav-toggle span { display:block; width:18px; height:2px; background:#fff; border-radius:999px; transition:transform 0.2s ease, opacity 0.2s ease; transform-origin:center; }
+
+    /* Hero layout */
+    .hero-top { display:grid; grid-template-columns:minmax(0,0.8fr) minmax(0,0.2fr); align-items:start; column-gap:72px; row-gap:20px; margin-top:62px; width:100%; }
+    .hero-top > * { min-width:0; }
+    .hero-logo-wrap { grid-column:1/2; grid-row:1; overflow:hidden; }
+    .hero-logo-wrap svg { display:block; width:100%; height:auto; overflow:hidden !important; }
+    .hero-logo-copy { margin-top:40px; width:100%; }
+    .hero-copy-block { grid-column:2/3; grid-row:1; display:flex; justify-content:flex-start; align-items:flex-start; padding-top:6px; min-width:0; }
+
+    /* Scroll cue */
+    .scroll-cue { position:absolute; left:50%; bottom:-132px; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:10px; color:rgba(255,255,255,0.9); pointer-events:none; z-index:20; transition:opacity 0.35s ease, transform 0.35s ease; }
+    .scroll-cue.scroll-cue-hidden { opacity:0; transform:translateX(-50%) translateY(14px); }
+    .scroll-cue-label { font-size:11px; letter-spacing:0.24em; text-transform:uppercase; opacity:0.72; }
+    .scroll-cue-mouse { position:relative; width:28px; height:46px; border:1.5px solid rgba(255,255,255,0.78); border-radius:999px; background:rgba(255,255,255,0.02); animation:scrollCueBob 1.7s cubic-bezier(.34,1.56,.64,1) infinite; }
+    .scroll-cue-wheel { position:absolute; top:9px; left:50%; width:4px; height:9px; border-radius:999px; background:rgba(255,255,255,0.92); transform:translateX(-50%); animation:scrollCueWheel 1.7s ease infinite; }
+    @keyframes scrollCueBob { 0%,100%{transform:translateY(0) scale(1)} 20%{transform:translateY(2px) scale(0.97,1.03)} 42%{transform:translateY(-8px) scale(1.03,0.98)} 58%{transform:translateY(0) scale(0.985,1.015)} 74%{transform:translateY(-3px) scale(1.01,0.995)} }
+    @keyframes scrollCueWheel { 0%{opacity:0;transform:translateX(-50%) translateY(-2px)} 18%{opacity:1;transform:translateX(-50%) translateY(0)} 56%{opacity:1;transform:translateX(-50%) translateY(12px)} 70%,100%{opacity:0;transform:translateX(-50%) translateY(14px)} }
+
+    /* Hero stack */
+    .hero-stack { font-family:'Barlow Condensed','Arial Narrow','Helvetica Neue',sans-serif; font-size:4vw; font-weight:300; line-height:1.3; letter-spacing:-0.5px; color:#fff; text-align:left; margin-top:45px; }
+    .hero-stack .hero-stack-strong { font:inherit; font-weight:500; }
+    .hero-stack em { font-style:normal; color:#fff; }
+    .hero-stack .hero-stack-line { display:block; font:inherit; line-height:inherit; letter-spacing:inherit; opacity:0; transform:translateY(18px); will-change:opacity,transform; }
+    .hero-stack.hero-stack-animate .hero-stack-line { animation:heroStackReveal 0.55s ease forwards; }
+    @keyframes heroStackReveal { 0%{opacity:0;transform:translateY(18px)} 100%{opacity:1;transform:translateY(0)} }
+
+    /* About copy */
+    .about-row { position:relative; width:100%; text-align:left; }
+    .about-row p { text-align:left !important; font-size:20px !important; line-height:1.55 !important; margin:0 !important; white-space:normal !important; overflow-wrap:anywhere !important; word-break:break-word !important; max-width:100% !important; color:#fff; font-weight:200; }
+    .about-row p.typing-effect { opacity:0; transform:translateX(-18px); clip-path:inset(0 100% 0 0); will-change:opacity,transform,clip-path; }
+    .about-row p.typing-effect.typing-done { animation:aboutCopyReveal 0.9s ease forwards; }
+    @keyframes aboutCopyReveal { 0%{opacity:0;transform:translateX(-18px);clip-path:inset(0 100% 0 0)} 100%{opacity:1;transform:translateX(0);clip-path:inset(0 0 0 0)} }
+
+    /* About blurb */
+    .about-blurb { padding:80px 24px; }
+    .section-inner { width:100%; max-width:1920px; margin:0 auto; }
+    .blurb-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+    .blurb-headline { margin:0 0 20px; font-family:'Barlow Condensed','Arial Narrow','Helvetica Neue',sans-serif; font-size:clamp(36px,4vw,64px); font-weight:500; line-height:1.0; letter-spacing:-0.03em; text-transform:uppercase; }
+    .blurb-copy { margin:0 0 32px; font-size:16px; line-height:1.75; color:rgba(255,255,255,0.7); }
+    .section-link { display:inline-flex; align-items:center; gap:8px; padding:12px 28px; border:1px solid rgba(255,255,255,0.22); border-radius:999px; font-size:13px; font-weight:600; color:#fff; text-decoration:none; white-space:nowrap; transition:background 0.2s, border-color 0.2s; }
+    .section-link:hover { background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.4); }
+    .pillars { display:grid; gap:16px; }
+    .pillar { padding:20px 24px; border:1px solid rgba(255,255,255,0.22); border-radius:16px; background:rgba(255,255,255,0.1); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); }
+    .pillar strong { display:block; font-size:15px; font-weight:600; margin-bottom:6px; }
+    .pillar span { font-size:14px; color:rgba(255,255,255,0.62); line-height:1.6; }
+
+    /* Footer */
+    .footer-addr { display:flex; align-items:center; gap:16px; white-space:nowrap; flex-wrap:wrap; }
+    .footer-addr a { color:#ddd; text-decoration:none; display:flex; align-items:center; gap:8px; transition:color 0.2s; }
+    .footer-addr a:hover { color:#fff; }
+    .footer-copy { color:#ddd; margin-top:8px; display:flex; align-items:center; gap:24px; font-size:14px; flex-wrap:wrap; }
+    .footer-copy p { margin:0; }
+    .footer-copy a { color:#ddd; text-decoration:none; transition:color 0.2s; }
+    .footer-copy a:hover { color:#fff; }
+
+    /* Responsive */
+    @media (max-width:900px) {
+      .hero-top { grid-template-columns:1fr !important; column-gap:0 !important; row-gap:40px !important; margin-top:32px !important; overflow:hidden !important; }
+      .hero-logo-wrap, .hero-copy-block { grid-column:1/-1 !important; grid-row:auto !important; }
+      .hero-copy-block { justify-content:flex-start !important; padding-top:0 !important; }
+      .hero-stack { font-size:clamp(24px,3.2vw,34px) !important; }
+    }
+    @media (max-width:768px) {
+      .blurb-grid { grid-template-columns:1fr; gap:40px; }
+      .nav-bar { padding:12px 16px; }
+      .nav-toggle { display:flex; margin-left:auto; }
+      .nav-links { display:none !important; position:absolute; top:calc(100% + 8px); left:14px; right:14px; padding:12px; border:1px solid rgba(255,255,255,0.12); border-radius:14px; background:rgba(0,0,0,0.92); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); flex-direction:column; align-items:stretch; gap:8px; z-index:60; box-shadow:0 20px 40px rgba(0,0,0,0.45); }
+      .nav-bar.nav-open .nav-links { display:flex !important; }
+      .nav-links a, .lang-wrap { width:100%; }
+      .nav-links a { justify-content:flex-start; padding:12px 14px; border-radius:12px; }
+      .lang-btn { width:100%; justify-content:flex-start; padding:12px 14px; border-radius:12px; }
+      #langDropdown { position:static; margin-top:4px; min-width:0; border:none; background:rgba(255,255,255,0.04); backdrop-filter:none; box-shadow:none; }
+      .lang-wrap.lang-open #langDropdown { display:block; }
+      .nav-bar.nav-open .nav-toggle span:nth-child(1) { transform:translateY(6px) rotate(45deg); }
+      .nav-bar.nav-open .nav-toggle span:nth-child(2) { opacity:0; }
+      .nav-bar.nav-open .nav-toggle span:nth-child(3) { transform:translateY(-6px) rotate(-45deg); }
+      .scroll-cue { display:none !important; }
+      #hero-layout { padding-top:36px !important; padding-bottom:20px !important; }
+      .hero-top { margin-top:12px !important; row-gap:10px !important; }
+      .hero-logo-wrap .logo-path { fill:rgba(255,255,255,0.75) !important; stroke:rgba(255,255,255,0.95) !important; }
+      .about-row p { font-size:16px !important; line-height:1.55 !important; }
+      .hero-stack { font-size:clamp(52px,17vw,108px) !important; line-height:1.15 !important; letter-spacing:0.01em !important; margin-top:12px !important; font-weight:300 !important; color:rgba(255,255,255,0.45) !important; }
+      .hero-stack em { color:inherit !important; font-weight:inherit !important; }
+      .hero-stack .hero-stack-strong { font-weight:700 !important; }
+      .hero-stack .hero-stack-line { display:block !important; margin-right:0 !important; white-space:nowrap !important; }
+      .hero-stack em::after { content:"" !important; }
+    }
+    @media (min-width:769px) { .nav-links { display:flex !important; } .nav-toggle { display:none !important; } }
+  
+body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Infinique",
+  "alternateName": "인피니크",
+  "url": "https://infinique.kr/",
+  "logo": "https://infinique.kr/assets/infinique_logo.svg",
+  "image": "https://infinique.kr/assets/og.png",
+  "description": "Presentation design studio specializing in IR decks, company profiles, business plans, proposals, and service decks.",
+  "email": "infinique@infinique.co.kr",
+  "sameAs": ["https://infinique.kr/"],
+  "areaServed": "KR"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Infinique",
+  "url": "https://infinique.kr/en/",
+  "image": "https://infinique.kr/assets/og.png",
+  "serviceType": ["Presentation Design", "Investor Deck Design", "Company Profile Design", "Business Plan Design", "Business Proposal Design", "Service Deck Design"],
+  "areaServed": {"@type": "Country", "name": "Korea"}
+}
+</script>
+</head>
+<body>
+
+  <video autoplay loop muted playsinline style="position:fixed;top:0;left:0;width:100%;height:100vh;object-fit:cover;opacity:0.5;z-index:0;">
+    <source src="../assets/infinity.mp4" type="video/mp4">
+  </video>
+
+  <div style="position:relative;z-index:10;">
+
+    <!-- Nav -->
+    <div class="nav-bar">
+      <a href="./index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1458.99 347.83" style="height:24px;width:auto;">
+          <path fill="#fff" d="M354.46,41.61c3.4-28.62,36-46.81,62.75-39.7,20.08,5.34,29.39,21.57,30.13,41.57l-3.92,1.62c3.14-25.74-25.56-52.37-48.5-31.95-6.08,5.41-12.47,18.39-12.47,26.47v32.43h50.47c2.11,0,9.33,2.32,11.75,3.23,13.5,5.11,18.74,17.44,19.77,31.16,2.78,37.03-2.66,77.69-.08,114.84.83,11.97,4.72,25.42,18.37,22.61,1.81-.37,3.64-.9,5.16-1.51,2.04-.82,3.15-1.36,3.15-1.36l.93,2.51s-10.75,7.1-27.96,4.04-26.26-15.52-27.62-34.29c-2.65-36.65,2.79-77.07.02-113.78-.36-4.83-3.05-22.47-9.48-22.47h-44.48v183.75c0,34.86-3.44,38.76-4.81,41.47-8.15,16.09-27.94,19.9-43.65,15.52-2.54-.71-7.57-3.12-7.57-3.12l.93-2.51s4.51,2.23,8.3,2.87c9.19,1.53,13.39-2.7,16-10.29,1.81-5.27,2.83-19.15,2.83-21.81V77.03h-17.99v-4.99h17.99c.83-9.65-1.12-21.01,0-30.44Z"/>
+          <path fill="#fff" d="M968.14,237.44c-48.64,20.19-112.65,6.16-127.22-48.85-4.59-17.36-5-51.1-2.59-69.01,8.78-65.39,93.9-59.66,117.36-7.65l12.45,34.97v-54.39c0-3.69-4.48-12.89-8.08-14.89-6.44-3.57-10.4-.66-16.28.58-.85.18-1.88,1.44-2.62-.67s-.2-2,1.26-2.72c1.64-.8,7.54-2.27,9.48-2.51,19.65-2.4,37.96,3.84,42.92,24.49,5.14,71.52-2.39,145.8,1.25,217.29.91,17.87,3.63,37.45,27.03,26.39l.93,2.51c-16.35,9.04-42.58,5.75-51.3-12.58-1.67-3.51-4.6-8.34-4.6-30.13v-62.84ZM968.01,237.57c-.3-28.48,2.21-56.67-3.33-84.73-5.46-27.62-17.89-60.33-45.83-71.99-28.52-11.9-46.44,2.78-51.36,30.91-4.07,23.24-3.41,69.83,4.24,91.97,14.92,43.13,57.73,47.61,96.28,33.84Z"/>
+          <path fill="#fff" d="M1346.74,68.35c24.74-1.72,64.98,4.19,77.04,29.27,10.68,22.2-1.21,31.93-20.18,40.47-11.83,5.33-24.46,9.27-36.34,14.61-18.45,8.3-66.04,31.33-67.88,54.04-.66,8.17,17.66,23.7,24.56,27.49,47.3,25.99,108.56-6.85,129.91-51.97l5.01,2.12c-20.87,44.33-67.82,72.41-117.29,66.18-116.57-14.68-111.59-174.08,5.17-182.2ZM1294.96,197.77c.25-2.72,2.04-5.73,3.58-7.91,11.06-15.68,38.56-30.36,55.73-39.16,10.87-5.57,34.72-13.31,41.09-22.84,5.3-7.93,2.48-24.77-1.61-33.18-11.82-24.31-44.9-24.18-65.7-12.07-34.79,20.25-49.19,76.95-34.55,113.19.39.96.12,2.28,1.48,1.98Z"/>
+          <path fill="#fff" d="M1.66,8.18l-1.01-3.98c30.46-9.1,53.51-.36,56.01,33.38,4.46,60.21-3.43,125.85-.02,186.63,1.4,15.67,9.85,24.51,25.48,16.5l1.49,2.46c-3.74,3.2-9.62,4.22-14.45,4.55-23.39,1.6-38.69-9.66-40.56-33.44-4.58-58.34,3.33-122.67.08-181.7C27.67,14.2,24.44-1.97,1.66,8.18Z"/>
+          <path fill="#fff" d="M810.93,240.54l1.81,2.89-1.51.74c-19.5,8.05-46.65,3.61-52.68-19.24-1.07-4.07-2.05-10.42-2.34-14.63-2.43-36.27,2.6-75.62.08-111.85-1.14-16.38-7.21-28.52-25.53-19.44l-1.49-3.95c26.88-8.6,52.54-.68,55,30.39,2.93,36.9-2.8,77.82-.07,114.83.39,5.31,2.04,14.47,5.19,18.77,6.29,8.56,17.54,3.1,20.91,1.77.48-.19.63-.27.63-.27Z"/>
+          <path fill="#fff" d="M716.68,240.66c-19.33,8.99-25.23-3.04-26.44-20.38-2.34-33.6,3.24-71.6-.08-104.7-3.78-37.64-44.79-50.52-77.05-40.25-22.7,7.23-37.57,26.72-45.51,48.37l-7.25,22.2s.07-12.67-.21-24.68c-.02-1.11-.06-2.22-.09-3.33,0-.06,0-.12,0-.17-.04-1.31-.09-2.59-.15-3.83-.05-1.09-.11-2.18-.17-3.27-.04-.73-.09-1.43-.14-2.11-.07-1.02-.12-2.05-.2-3.06-.08-1.02-.2-2-.33-2.97-.1-.84-.19-1.46-.27-1.8-1.02-6-3.02-11-5.77-15.06-.03-.04-.06-.09-.09-.13-.22-.34-.46-.67-.69-.99-5.03-6.74-12.33-10.65-20.8-12.07-.59-.09-1.18-.17-1.78-.23-7.65-.95-16.16.01-24.83,2.73-.14.04-.29.08-.43.13h0l1.49,3.95h0s.09-.04.13-.06c4.49-2.21,8.24-3.13,11.36-3.03.04,0,.09,0,.13,0,.18.01.37.03.55.04,3.52.29,6.2,1.95,8.2,4.57,3.14,4.11,4.65,10.58,5.15,17.92.41,5.93.61,11.95.68,18.02.37,31.01-2.79,63.49-.76,93.82.05.76.13,1.61.22,2.48.42,3.96,1.23,8.82,2.11,12.15,2.48,9.41,8.55,15.69,16.18,19.27,7.39,3.46,16.24,4.4,24.75,3.17,4.06-.59,8.04-1.66,11.74-3.19l1.51-.74-.45-.71-.8-1.28-.56-.89s-.15.08-.63.27c-.48.19-1.13.47-1.89.77-1.74.69-4.11,1.55-6.68,1.95-.53.08-1.07.14-1.61.18-3.79.27-7.8-.68-10.73-4.67-.63-.86-1.2-1.92-1.71-3.1-.94-2.16-1.68-4.73-2.24-7.3-1.87-12.65-1.12-43.11-.18-56.29,1.58-22.02,11.02-54.72,24.56-72.28,24.76-32.12,73.6-34.27,77.41,14.35,2.49,31.74-2.68,67.14-.02,98.81,2.63,31.4,28.84,41.95,55.94,29.96l-1.57-2.53Z"/>
+          <path fill="#fff" d="M312.82,240.66c-19.33,8.99-25.23-3.04-26.44-20.38-2.34-33.6,3.24-71.6-.08-104.7-3.78-37.64-44.79-50.52-77.05-40.25-22.7,7.23-37.57,26.72-45.51,48.37l-7.25,22.2s.07-12.67-.21-24.68c-.02-1.11-.06-2.22-.09-3.33,0-.06,0-.12,0-.17-.04-1.31-.09-2.59-.15-3.83-.05-1.09-.11-2.18-.17-3.27-.04-.73-.09-1.43-.14-2.11-.07-1.02-.12-2.05-.2-3.06-.08-1.02-.2-2-.33-2.97-.1-.84-.19-1.46-.27-1.8-1.02-6-3.02-11-5.77-15.06-.03-.04-.06-.09-.09-.13-.22-.34-.46-.67-.69-.99-5.03-6.74-12.33-10.65-20.8-12.07-.59-.09-1.18-.17-1.78-.23-7.65-.95-16.16.01-24.83,2.73-.14.04-.29.08-.43.13h0l1.49,3.95h0s.09-.04.13-.06c4.49-2.21,8.24-3.13,11.36-3.03.04,0,.09,0,.13,0,.18.01.37.03.55.04,3.52.29,6.2,1.95,8.2,4.57,3.14,4.11,4.65,10.58,5.15,17.92.41,5.93.61,11.95.68,18.02.37,31.01-2.79,63.49-.76,93.82.05.76.13,1.61.22,2.48.42,3.96,1.23,8.82,2.11,12.15,2.48,9.41,8.55,15.69,16.18,19.27,7.39,3.46,16.24,4.4,24.75,3.17,4.06-.59,8.04-1.66,11.74-3.19l1.51-.74-.45-.71-.8-1.28-.56-.89s-.15.08-.63.27c-.48.19-1.13.47-1.89.77-1.74.69-4.11,1.55-6.68,1.95-.53.08-1.07.14-1.61.18-3.79.27-7.8-.68-10.73-4.67-.63-.86-1.2-1.92-1.71-3.1-.94-2.16-1.68-4.73-2.24-7.3-1.87-12.65-1.12-43.11-.18-56.29,1.58-22.02,11.02-54.72,24.56-72.28,24.76-32.12,73.6-34.27,77.41,14.35,2.49,31.74-2.68,67.14-.02,98.81,2.63,31.4,28.84,41.95,55.94,29.96l-1.57-2.53Z"/>
+          <path fill="#fff" d="M1244.39,240.56c-.88-.78-14.62,8.16-21.83-1.65-3.15-4.29-4.8-13.46-5.19-18.77-2.72-37.02,3-77.94.07-114.83-2.02-25.42-19.57-35.34-40.62-33.39-1.04.06-2.1.14-3.17.25-1.14.12-4.83.84-7.91,1.79-1.1.3-2.2.61-3.3.96l.1.26,1.27,3.37.12.33c2.69-1.33,5.11-2.19,7.29-2.67,14.13-2.43,16.93,11.14,17.85,26.23,2.51,41.14-4.46,115.52-47.33,135.44-17.52,8.14-39.12,7.4-49.18-11.15-15.89-29.31.1-94.39-7.97-128.76-6.05-25.77-32.63-31.93-54.46-21.45,2.58,4.19,5.42.14,9.56-.41,15.13-2.01,17.62,11.47,18.45,23.32,2.3,33.11-2.92,69.88.09,102.7,3.57,38.97,43.1,52.83,77.05,42.26,23.72-7.39,38.13-28.13,46.51-50.36l7.16-22.91c-.28,10.96-.37,21.84.09,32.5.1,2.19.21,4.37.36,6.54.28,4.21,1.26,10.56,2.34,14.63,6.03,22.85,33.18,27.3,52.68,19.24.21-.05.35-.18.44-.36.48-.89-.34-3.03-.45-3.12Z"/>
+          <path fill="#fff" d="M766.55,58.64c-1.73-15.31-14.14-27.72-29.28-29.27,16.57-3.2,26.24-13.27,29.36-29.37,2.81,16.16,12.48,26.11,28.61,29.28-16.24,2.9-25.78,12.86-28.68,29.36Z"/>
+        </svg>
+      </a>
+      <nav class="nav-links" id="siteNav">
+        <a class="is-active" href="./index.html">Home</a>
+        <a href="./work.html">Work</a>
+        <a href="./about.html">About</a>
+        <a href="./contact.html">Contact</a>
+        <div class="lang-wrap">
+          <button id="langToggle" class="lang-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><ellipse cx="12" cy="12" rx="4" ry="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+            <span id="langLabel">EN</span>
+          </button>
+          <div id="langDropdown">
+            <a href="#" onclick="setLang('ko');return false;">Korean</a>
+            <a href="#" onclick="setLang('en');return false;">English</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Hero -->
+    <section class="pt-16 pb-6">
+      <div class="w-full px-6">
+        <div id="hero-layout" style="padding-top:100px;padding-bottom:40px;position:relative;">
+          <div class="hero-top">
+            <div class="hero-logo-wrap">
+              <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1458.99 347.83" preserveAspectRatio="xMidYMid meet" class="w-full h-auto mx-auto overflow-visible">
+                <defs><style>
+                  .logo-path { fill:rgba(255,255,255,0.32); stroke:rgba(255,255,255,0.68); stroke-width:0.8; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:2000; stroke-dashoffset:2000; fill-opacity:0; }
+                  .letter-i  { animation:drawLine 0.8s ease-in-out forwards,       revealFill 0.8s ease-out 2.15s forwards; }
+                  .letter-n1 { animation:drawLine 0.8s ease-in-out 0.15s forwards, revealFill 0.8s ease-out 2.15s forwards; }
+                  .letter-f  { animation:drawLine 0.8s ease-in-out 0.3s forwards,  revealFill 0.8s ease-out 2.15s forwards; }
+                  .letter-i2 { animation:drawLine 0.8s ease-in-out 0.45s forwards, revealFill 0.8s ease-out 2.15s forwards; }
+                  .letter-n2 { animation:drawLine 0.8s ease-in-out 0.6s forwards,  revealFill 0.8s ease-out 2.15s forwards; }
+                  .letter-i3 { animation:drawLine 0.8s ease-in-out 0.75s forwards, revealFill 0.8s ease-out 2.15s forwards; }
+                  .letter-q  { animation:drawLine 0.8s ease-in-out 0.9s forwards,  revealFill 0.8s ease-out 2.15s forwards; }
+                  .letter-u  { animation:drawLine 0.8s ease-in-out 1.05s forwards, revealFill 0.8s ease-out 2.15s forwards; }
+                  .letter-e  { animation:drawLine 0.8s ease-in-out 1.2s forwards,  revealFill 0.8s ease-out 2.15s forwards; }
+                  .letter-star { animation:drawLine 0.8s ease-in-out 1.35s forwards, revealFill 0.8s ease-out 2.15s forwards; }
+                  @keyframes drawLine   { 0%{stroke-dashoffset:2000} 100%{stroke-dashoffset:0} }
+                  @keyframes revealFill { 0%{fill-opacity:0} 100%{fill-opacity:1} }
+                
+    /* Footer responsive */
+    @media (max-width: 768px) {
+      .footer-main-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 32px !important;
+      }
+      .footer-main-row > div:last-child {
+        align-items: flex-start !important;
+      }
+      .footer-addr {
+        flex-wrap: wrap !important;
+        white-space: normal !important;
+      }
+    }
+
+/* Responsive <br> utilities */
+.br-sm, .br-md, .br-lg { display: none; }
+@media (max-width: 767px) { .br-sm { display: inline; } }
+@media (min-width: 768px) and (max-width: 1023px) { .br-md { display: inline; } }
+@media (min-width: 1024px) { .br-lg { display: inline; } }
+@media (max-width: 767px) { .br-hide-sm { display: none !important; } }
+@media (min-width: 768px) and (max-width: 1023px) { .br-hide-md { display: none !important; } }
+@media (min-width: 1024px) { .br-hide-lg { display: none !important; } }
+/* Convenience combos */
+@media (max-width: 1023px) { .br-lg-only { display: none !important; } }
+@media (min-width: 768px) { .br-sm-only { display: none !important; } }
+
+@media (max-width: 767px) {
+  .card-overlay { background: rgba(0,0,0,0.25) !important; }
+}
+
+@media (max-width: 768px) {
+  .footer-main-row img[alt="Infinique"],
+  .footer-main-row img[alt="Dev logo"] { width: 120px !important; }
+}
+
+@media (max-width: 768px) {
+  footer .text-lg { font-size: 12px !important; }
+  footer .footer-copy p, footer .footer-copy { font-size: 11px !important; }
+  footer p { font-size: 11px !important; }
+  footer .footer-addr,
+  footer .footer-addr a,
+  footer .footer-addr span { font-size: 12px !important; }
+  footer .footer-addr a svg { width: 14px !important; height: 14px !important; }
+  footer .footer-addr > .text-lg,
+  footer .footer-addr > a,
+  footer .footer-addr > a span { white-space: nowrap !important; }
+}
+@media (max-width: 360px) {
+  footer .text-lg { font-size: 11px !important; }
+  footer p { font-size: 10px !important; }
+  footer .footer-addr,
+  footer .footer-addr a,
+  footer .footer-addr span { font-size: 11px !important; }
+  footer .footer-addr a svg { width: 12px !important; height: 12px !important; }
+  .footer-main-row img[alt="Infinique"],
+  .footer-main-row img[alt="Dev logo"] { width: 100px !important; }
+}
+</style></defs>
+                <path class="logo-path letter-i"  d="M1.66,8.18l-1.01-3.98c30.46-9.1,53.51-.36,56.01,33.38,4.46,60.21-3.43,125.85-.02,186.63,1.4,15.67,9.85,24.51,25.48,16.5l1.49,2.46c-3.74,3.2-9.62,4.22-14.45,4.55-23.39,1.6-38.69-9.66-40.56-33.44-4.58-58.34,3.33-122.67.08-181.7C27.67,14.2,24.44-1.97,1.66,8.18Z"/>
+                <path class="logo-path letter-n1" d="M312.82,240.66c-19.33,8.99-25.23-3.04-26.44-20.38-2.34-33.6,3.24-71.6-.08-104.7-3.78-37.64-44.79-50.52-77.05-40.25-22.7,7.23-37.57,26.72-45.51,48.37l-7.25,22.2s.07-12.67-.21-24.68c-.02-1.11-.06-2.22-.09-3.33,0-.06,0-.12,0-.17-.04-1.31-.09-2.59-.15-3.83-.05-1.09-.11-2.18-.17-3.27-.04-.73-.09-1.43-.14-2.11-.07-1.02-.12-2.05-.2-3.06-.08-1.02-.2-2-.33-2.97-.1-.84-.19-1.46-.27-1.8-1.02-6-3.02-11-5.77-15.06-.03-.04-.06-.09-.09-.13-.22-.34-.46-.67-.69-.99-5.03-6.74-12.33-10.65-20.8-12.07-.59-.09-1.18-.17-1.78-.23-7.65-.95-16.16.01-24.83,2.73-.14.04-.29.08-.43.13h0l1.49,3.95h0s.09-.04.13-.06c4.49-2.21,8.24-3.13,11.36-3.03.04,0,.09,0,.13,0,.18.01.37.03.55.04,3.52.29,6.2,1.95,8.2,4.57,3.14,4.11,4.65,10.58,5.15,17.92.41,5.93.61,11.95.68,18.02.37,31.01-2.79,63.49-.76,93.82.05.76.13,1.61.22,2.48.42,3.96,1.23,8.82,2.11,12.15,2.48,9.41,8.55,15.69,16.18,19.27,7.39,3.46,16.24,4.4,24.75,3.17,4.06-.59,8.04-1.66,11.74-3.19l1.51-.74-.45-.71-.8-1.28-.56-.89s-.15.08-.63.27c-.48.19-1.13.47-1.89.77-1.74.69-4.11,1.55-6.68,1.95-.53.08-1.07.14-1.61.18-3.79.27-7.8-.68-10.73-4.67-.63-.86-1.2-1.92-1.71-3.1-.94-2.16-1.68-4.73-2.24-7.3-1.87-12.65-1.12-43.11-.18-56.29,1.58-22.02,11.02-54.72,24.56-72.28,24.76-32.12,73.6-34.27,77.41,14.35,2.49,31.74-2.68,67.14-.02,98.81,2.63,31.4,28.84,41.95,55.94,29.96l-1.57-2.53Z"/>
+                <path class="logo-path letter-f"  d="M354.46,41.61c3.4-28.62,36-46.81,62.75-39.7,20.08,5.34,29.39,21.57,30.13,41.57l-3.92,1.62c3.14-25.74-25.56-52.37-48.5-31.95-6.08,5.41-12.47,18.39-12.47,26.47v32.43h50.47c2.11,0,9.33,2.32,11.75,3.23,13.5,5.11,18.74,17.44,19.77,31.16,2.78,37.03-2.66,77.69-.08,114.84.83,11.97,4.72,25.42,18.37,22.61,1.81-.37,3.64-.9,5.16-1.51,2.04-.82,3.15-1.36,3.15-1.36l.93,2.51s-10.75,7.1-27.96,4.04-26.26-15.52-27.62-34.29c-2.65-36.65,2.79-77.07.02-113.78-.36-4.83-3.05-22.47-9.48-22.47h-44.48v183.75c0,34.86-3.44,38.76-4.81,41.47-8.15,16.09-27.94,19.9-43.65,15.52-2.54-.71-7.57-3.12-7.57-3.12l.93-2.51s4.51,2.23,8.3,2.87c9.19,1.53,13.39-2.7,16-10.29,1.81-5.27,2.83-19.15,2.83-21.81V77.03h-17.99v-4.99h17.99c.83-9.65-1.12-21.01,0-30.44Z"/>
+                <path class="logo-path letter-i2" d="M810.93,240.54l1.81,2.89-1.51.74c-19.5,8.05-46.65,3.61-52.68-19.24-1.07-4.07-2.05-10.42-2.34-14.63-2.43-36.27,2.6-75.62.08-111.85-1.14-16.38-7.21-28.52-25.53-19.44l-1.49-3.95c26.88-8.6,52.54-.68,55,30.39,2.93,36.9-2.8,77.82-.07,114.83.39,5.31,2.04,14.47,5.19,18.77,6.29,8.56,17.54,3.1,20.91,1.77.48-.19.63-.27.63-.27Z"/>
+                <path class="logo-path letter-n2" d="M716.68,240.66c-19.33,8.99-25.23-3.04-26.44-20.38-2.34-33.6,3.24-71.6-.08-104.7-3.78-37.64-44.79-50.52-77.05-40.25-22.7,7.23-37.57,26.72-45.51,48.37l-7.25,22.2s.07-12.67-.21-24.68c-.02-1.11-.06-2.22-.09-3.33,0-.06,0-.12,0-.17-.04-1.31-.09-2.59-.15-3.83-.05-1.09-.11-2.18-.17-3.27-.04-.73-.09-1.43-.14-2.11-.07-1.02-.12-2.05-.2-3.06-.08-1.02-.2-2-.33-2.97-.1-.84-.19-1.46-.27-1.8-1.02-6-3.02-11-5.77-15.06-.03-.04-.06-.09-.09-.13-.22-.34-.46-.67-.69-.99-5.03-6.74-12.33-10.65-20.8-12.07-.59-.09-1.18-.17-1.78-.23-7.65-.95-16.16.01-24.83,2.73-.14.04-.29.08-.43.13h0l1.49,3.95h0s.09-.04.13-.06c4.49-2.21,8.24-3.13,11.36-3.03.04,0,.09,0,.13,0,.18.01.37.03.55.04,3.52.29,6.2,1.95,8.2,4.57,3.14,4.11,4.65,10.58,5.15,17.92.41,5.93.61,11.95.68,18.02.37,31.01-2.79,63.49-.76,93.82.05.76.13,1.61.22,2.48.42,3.96,1.23,8.82,2.11,12.15,2.48,9.41,8.55,15.69,16.18,19.27,7.39,3.46,16.24,4.4,24.75,3.17,4.06-.59,8.04-1.66,11.74-3.19l1.51-.74-.45-.71-.8-1.28-.56-.89s-.15.08-.63.27c-.48.19-1.13.47-1.89.77-1.74.69-4.11,1.55-6.68,1.95-.53.08-1.07.14-1.61.18-3.79.27-7.8-.68-10.73-4.67-.63-.86-1.2-1.92-1.71-3.1-.94-2.16-1.68-4.73-2.24-7.3-1.87-12.65-1.12-43.11-.18-56.29,1.58-22.02,11.02-54.72,24.56-72.28,24.76-32.12,73.6-34.27,77.41,14.35,2.49,31.74-2.68,67.14-.02,98.81,2.63,31.4,28.84,41.95,55.94,29.96l-1.57-2.53Z"/>
+                <path class="logo-path letter-star" d="M766.55,58.64c-1.73-15.31-14.14-27.72-29.28-29.27,16.57-3.2,26.24-13.27,29.36-29.37,2.81,16.16,12.48,26.11,28.61,29.28-16.24,2.9-25.78,12.86-28.68,29.36Z"/>
+                <path class="logo-path letter-q"  d="M968.14,237.44c-48.64,20.19-112.65,6.16-127.22-48.85-4.59-17.36-5-51.1-2.59-69.01,8.78-65.39,93.9-59.66,117.36-7.65l12.45,34.97v-54.39c0-3.69-4.48-12.89-8.08-14.89-6.44-3.57-10.4-.66-16.28.58-.85.18-1.88,1.44-2.62-.67s-.2-2,1.26-2.72c1.64-.8,7.54-2.27,9.48-2.51,19.65-2.4,37.96,3.84,42.92,24.49,5.14,71.52-2.39,145.8,1.25,217.29.91,17.87,3.63,37.45,27.03,26.39l.93,2.51c-16.35,9.04-42.58,5.75-51.3-12.58-1.67-3.51-4.6-8.34-4.6-30.13v-62.84ZM968.01,237.57c-.3-28.48,2.21-56.67-3.33-84.73-5.46-27.62-17.89-60.33-45.83-71.99-28.52-11.9-46.44,2.78-51.36,30.91-4.07,23.24-3.41,69.83,4.24,91.97,14.92,43.13,57.73,47.61,96.28,33.84Z"/>
+                <path class="logo-path letter-u"  d="M1244.39,240.56c-.88-.78-14.62,8.16-21.83-1.65-3.15-4.29-4.8-13.46-5.19-18.77-2.72-37.02,3-77.94.07-114.83-2.02-25.42-19.57-35.34-40.62-33.39-1.04.06-2.1.14-3.17.25-1.14.12-4.83.84-7.91,1.79-1.1.3-2.2.61-3.3.96l.1.26,1.27,3.37.12.33c2.69-1.33,5.11-2.19,7.29-2.67,14.13-2.43,16.93,11.14,17.85,26.23,2.51,41.14-4.46,115.52-47.33,135.44-17.52,8.14-39.12,7.4-49.18-11.15-15.89-29.31.1-94.39-7.97-128.76-6.05-25.77-32.63-31.93-54.46-21.45,2.58,4.19,5.42.14,9.56-.41,15.13-2.01,17.62,11.47,18.45,23.32,2.3,33.11-2.92,69.88.09,102.7,3.57,38.97,43.1,52.83,77.05,42.26,23.72-7.39,38.13-28.13,46.51-50.36l7.16-22.91c-.28,10.96-.37,21.84.09,32.5.1,2.19.21,4.37.36,6.54.28,4.21,1.26,10.56,2.34,14.63,6.03,22.85,33.18,27.3,52.68,19.24.21-.05.35-.18.44-.36.48-.89-.34-3.03-.45-3.12Z"/>
+                <path class="logo-path letter-e"  d="M1346.74,68.35c24.74-1.72,64.98,4.19,77.04,29.27,10.68,22.2-1.21,31.93-20.18,40.47-11.83,5.33-24.46,9.27-36.34,14.61-18.45,8.3-66.04,31.33-67.88,54.04-.66,8.17,17.66,23.7,24.56,27.49,47.3,25.99,108.56-6.85,129.91-51.97l5.01,2.12c-20.87,44.33-67.82,72.41-117.29,66.18-116.57-14.68-111.59-174.08,5.17-182.2ZM1294.96,197.77c.25-2.72,2.04-5.73,3.58-7.91,11.06-15.68,38.56-30.36,55.73-39.16,10.87-5.57,34.72-13.31,41.09-22.84,5.3-7.93,2.48-24.77-1.61-33.18-11.82-24.31-44.9-24.18-65.7-12.07-34.79,20.25-49.19,76.95-34.55,113.19.39.96.12,2.28,1.48,1.98Z"/>
+              </svg>
+              <div class="hero-logo-copy">
+                <div class="about-row">
+                  <p class="typing-effect"><span style="font-weight:600;">PPT EXPERTS, INFINIQUE.</span> From a single idea to a polished final deck — concept, structure, visual finish, and persuasive power that wins.</p>
+                </div>
+              </div>
+            </div>
+            <div class="hero-copy-block">
+              <div class="hero-stack">ACTIVATE.<br><em>ACCELERATE.</em><br>ACHIEVE.<br><span class="hero-stack-strong">INFINIQUE.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section id="work" style="padding:80px 24px;">
+      <div class="max-w-[1920px] mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2" id="mainWorkGrid"></div>
+        <script>
+        (function() {
+          var EN_LABEL = {'ir':'IR','company-profile':'Company Profile','business-plan':'Business Plan','business-proposal':'Business Proposal','service-intro':'Service Deck','education':'Education'};
+          var DEFAULTS = [
+            {id:1,name:"Index Robotics",category:"ir",image:"assets/work-01.jpg",showOnMain:true,mainOrder:1,workOrder:1},
+            {id:2,name:"Kiuri",category:"company-profile",image:"assets/work-02.jpg",showOnMain:true,mainOrder:2,workOrder:2},
+            {id:3,name:"Trimass",category:"ir",image:"assets/work-03.jpg",showOnMain:true,mainOrder:3,workOrder:3},
+            {id:4,name:"TVING",category:"service-intro",image:"assets/work-04.jpg",showOnMain:true,mainOrder:4,workOrder:4},
+            {id:5,name:"HiKey",category:"business-plan",image:"assets/work-05.jpg",showOnMain:true,mainOrder:5,workOrder:5},
+            {id:6,name:"Sweat",category:"ir",image:"assets/work-06.jpg",showOnMain:true,mainOrder:6,workOrder:6},
+            {id:7,name:"Mongyu Garden",category:"service-intro",image:"assets/work-07.jpg",showOnMain:true,mainOrder:7,workOrder:7},
+            {id:8,name:"ITcon",category:"company-profile",image:"assets/work-08.jpg",showOnMain:true,mainOrder:8,workOrder:8}
+          ];
+          var grid = document.getElementById('mainWorkGrid');
+          if (!grid) return;
+          function drawEn(works) {
+            var mainWorks = (works || []).slice().filter(function(w){ return w.showOnMain; });
+            mainWorks.sort(function(a,b){ return (a.mainOrder||99)-(b.mainOrder||99); });
+            var html = '';
+            mainWorks.forEach(function(w) {
+              var img = w.image||'';
+              if (img.indexOf('data:') !== 0 && img.indexOf('http') !== 0) img = img.replace(/^\.\//,'').replace(/^assets\//,'../assets/');
+              var label = EN_LABEL[w.category] || w.categoryLabel || w.category;
+              var displayName = w.nameEn || w.name;
+              html += '<div class="group cursor-pointer"><div class="aspect-square overflow-hidden bg-gray-100 relative rounded-[10px]" style="box-shadow:0 6px 30px rgba(0,0,0,0.7);">'
+                + '<img src="'+img+'" alt="'+displayName+'" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">'
+                + '<div class="card-overlay"></div>'
+                + '<div class="absolute bottom-3 left-3 right-3 bg-white/40 backdrop-blur-md px-4 py-2.5 rounded-lg flex justify-between items-center gap-2 border border-white/50">'
+                + '<span class="card-name text-white text-sm font-medium">'+displayName+'</span><span class="card-type text-white text-sm">'+label+'</span>'
+                + '</div></div></div>';
+            });
+            grid.innerHTML = html;
+          }
+          function fromSupabaseRow(r) {
+            return {
+              id: r.id, name: r.name || '', nameEn: r.name_en || '',
+              category: r.category || '',
+              categoryLabel: r.category_label || '', image: r.image || '',
+              showOnMain: !!r.show_on_main, mainOrder: r.main_order || 99, workOrder: r.work_order || 99
+            };
+          }
+          var SB_URL = 'https://umzfjxrrotvwcmurzduz.supabase.co';
+          var SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVtemZqeHJyb3R2d2NtdXJ6ZHV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY0NTEzMDcsImV4cCI6MjA5MjAyNzMwN30.TR0lKwZeC1_AONrfNgJLYWOykq8u5RBYFGc4q_xpfak';
+
+          var raw = localStorage.getItem('iq_works');
+          var cached = null;
+          try { cached = raw ? JSON.parse(raw) : null; } catch(e) {}
+          drawEn(cached && cached.length ? cached : DEFAULTS);
+
+          fetch(SB_URL + '/rest/v1/works?select=*&order=id', { headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY } })
+            .then(function(r){ return r.ok ? r.json() : null; })
+            .then(function(data){
+              if (data && data.length) {
+                var ws = data.map(fromSupabaseRow);
+                try { localStorage.setItem('iq_works', JSON.stringify(ws)); } catch(e) {}
+                var prev = JSON.stringify(cached || DEFAULTS);
+                var next = JSON.stringify(ws);
+                if (prev !== next) drawEn(ws);
+              }
+            })
+            .catch(function(){});
+        })();
+        </script>
+      </div>
+    </section>
+
+    <!-- About blurb -->
+    <section class="about-blurb">
+      <div class="section-inner">
+        <div class="blurb-grid">
+          <div>
+            <h2 class="blurb-headline">More than a deck.<br>A whole experience.</h2>
+            <p class="blurb-copy">Infinique is a presentation studio that connects strategy and design into one seamless flow. We interpret your brand's context, shape the narrative, and craft every slide to persuade — not just to look good.</p>
+            <a href="./contact.html" class="section-link">Contact Us →</a>
+          </div>
+          <div class="pillars">
+            <div class="pillar">
+              <strong>Planning & Structure</strong>
+              <span>We design information architecture and message hierarchy so every page flows naturally into the next.</span>
+            </div>
+            <div class="pillar">
+              <strong>Brand-Sensitive Design</strong>
+              <span>We translate your brand's character into a visual language — consistent, refined, and memorable.</span>
+            </div>
+            <div class="pillar">
+              <strong>Outcome-Oriented Delivery</strong>
+              <span>Our goal is work that communicates clearly and persuades effectively in real presentations.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-black text-white py-20 px-6" style="border-top:1px solid rgba(255,255,255,0.1);">
+      <div class="max-w-[1920px] mx-auto">
+        <div class="footer-main-row" style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px;">
+          <div>
+            <span class="footer-addr">
+              <span class="text-lg" style="color:#ddd;">Infinique Co., Ltd.</span>
+              <span class="text-lg" style="color:#ddd;">|</span>
+              <a href="mailto:infinique@infinique.co.kr" class="text-lg hover:text-gray-300 transition-colors" style="color:#ddd;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                <span>infinique@infinique.co.kr</span>
+              </a>
+            </span>
+            <div class="footer-copy">
+              <p>© 2025 Infinique Co., Ltd. All rights reserved.<a href="../admin.html" aria-label="." style="display:inline-block;width:3px;height:3px;background:rgba(255,255,255,0.08);margin-left:6px;vertical-align:middle;border-radius:50%;"></a></p>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:12px;">
+            <img src="../assets/infinique_logo.svg" alt="Infinique" style="width:160px;height:auto;">
+            <a href="https://infinique.kr" target="_blank" rel="noopener" aria-label="infinique.kr">
+              <img src="../assets/dev_logo.svg" alt="Dev logo" style="width:160px;height:auto;">
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- /z-index wrapper -->
+
+  <!-- Image Modal -->
+  <div id="imgModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;cursor:pointer;backdrop-filter:blur(8px);opacity:0;transition:opacity 0.3s ease;">
+    <button id="modalClose" style="position:absolute;top:24px;right:24px;background:none;border:none;color:white;font-size:32px;cursor:pointer;z-index:10001;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background 0.2s;">&times;</button>
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;padding:40px;">
+      <img id="modalImg" src="" alt="" style="max-width:90vw;max-height:80vh;object-fit:contain;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.5);transform:scale(0.9);transition:transform 0.3s ease;">
+      <div id="modalInfo" style="margin-top:16px;text-align:center;opacity:0;transition:opacity 0.3s ease 0.1s;">
+        <span id="modalName" style="color:white;font-size:18px;font-weight:600;"></span>
+        <span style="color:rgba(255,255,255,0.4);margin:0 12px;">|</span>
+        <span id="modalType" style="color:rgba(255,255,255,0.6);font-size:16px;"></span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var modal=document.getElementById('imgModal'),modalImg=document.getElementById('modalImg'),modalName=document.getElementById('modalName'),modalType=document.getElementById('modalType'),modalInfo=document.getElementById('modalInfo'),modalClose=document.getElementById('modalClose');
+    function openModal(src,name,type){modalImg.src=src;modalName.textContent=name;modalType.textContent=type;modal.style.display='block';requestAnimationFrame(function(){modal.style.opacity='1';modalImg.style.transform='scale(1)';modalInfo.style.opacity='1';});var sw=window.innerWidth-document.documentElement.clientWidth;document.body.style.overflow='hidden';document.body.style.paddingRight=sw+'px';}
+    function closeModal(){modal.style.opacity='0';modalImg.style.transform='scale(0.9)';modalInfo.style.opacity='0';setTimeout(function(){modal.style.display='none';document.body.style.overflow='';document.body.style.paddingRight='';},300);}
+    document.querySelectorAll('#work .group.cursor-pointer').forEach(function(card){card.addEventListener('click',function(){var img=card.querySelector('img');var labels=card.querySelectorAll('.absolute span');openModal(img.src,labels[0]?labels[0].textContent:'',labels[1]?labels[1].textContent:'');});});
+    modal.addEventListener('click',function(e){if(e.target===modal||e.target===modal.querySelector('div'))closeModal();});
+    modalClose.addEventListener('click',closeModal);
+    modalClose.addEventListener('mouseenter',function(){this.style.background='rgba(255,255,255,0.1)';});
+    modalClose.addEventListener('mouseleave',function(){this.style.background='none';});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+  })();
+  </script>
+
+  <script>
+  (function(){
+    var heroLayout=document.getElementById('hero-layout');
+    if(!heroLayout)return;
+    heroLayout.style.position='relative';
+    var scrollCue=document.createElement('div');
+    scrollCue.className='scroll-cue';
+    scrollCue.setAttribute('aria-hidden','true');
+    scrollCue.innerHTML='<div class="scroll-cue-mouse"><span class="scroll-cue-wheel"></span></div><div class="scroll-cue-label">Scroll</div>';
+    heroLayout.appendChild(scrollCue);
+    function hide(){scrollCue.classList.add('scroll-cue-hidden');window.removeEventListener('scroll',hide);window.removeEventListener('wheel',hide);window.removeEventListener('touchstart',hide);}
+    if(window.scrollY>8){hide();return;}
+    window.addEventListener('scroll',hide,{passive:true});
+    window.addEventListener('wheel',hide,{passive:true});
+    window.addEventListener('touchstart',hide,{passive:true});
+  })();
+  </script>
+
+  <script>
+  (function(){
+    var heroStack=document.querySelector('.hero-stack');
+    if(!heroStack||heroStack.querySelector('.hero-stack-line'))return;
+    var lines=heroStack.innerHTML.split('<br>');
+    heroStack.innerHTML=lines.map(function(l){return'<span class="hero-stack-line">'+l+'</span>';}).join('');
+    window.setTimeout(function(){
+      heroStack.classList.add('hero-stack-animate');
+      heroStack.querySelectorAll('.hero-stack-line').forEach(function(line,i){line.style.animationDelay=(i*0.18)+'s';});
+    },1650);
+  })();
+  </script>
+
+  <script>
+  (function(){
+    var p=document.querySelector('.about-row p');
+    if(!p||p.dataset.typingReady==='true')return;
+    p.dataset.typingReady='true';
+    p.classList.add('typing-effect');
+    window.setTimeout(function(){p.classList.add('typing-done');},0);
+  })();
+  </script>
+
+  <script>
+  (function(){
+    var navBar=document.querySelector('.nav-bar');
+    var nav=navBar?navBar.querySelector('nav'):null;
+    var btn=document.getElementById('langToggle');
+    var dd=document.getElementById('langDropdown');
+    var langWrap=btn?btn.parentElement:null;
+    var navToggle;
+    var mq=window.matchMedia('(max-width:768px)');
+    function closeMenu(){if(!navBar||!navToggle)return;navBar.classList.remove('nav-open');navToggle.setAttribute('aria-expanded','false');}
+    function closeLang(){if(!dd)return;dd.style.display='none';if(langWrap)langWrap.classList.remove('lang-open');}
+    function sync(){if(!mq.matches){closeMenu();closeLang();}}
+    if(navBar&&nav){
+      navToggle=document.createElement('button');
+      navToggle.type='button';navToggle.className='nav-toggle';
+      navToggle.setAttribute('aria-label','Toggle menu');navToggle.setAttribute('aria-expanded','false');navToggle.setAttribute('aria-controls','siteNav');
+      navToggle.innerHTML='<span></span><span></span><span></span>';
+      navBar.appendChild(navToggle);
+      navToggle.addEventListener('click',function(e){e.stopPropagation();var open=navBar.classList.toggle('nav-open');navToggle.setAttribute('aria-expanded',open?'true':'false');if(!open)closeLang();});
+    }
+    if(btn&&dd){btn.addEventListener('click',function(e){e.stopPropagation();if(mq.matches&&langWrap){var isOpen=langWrap.classList.toggle('lang-open');dd.style.display=isOpen?'block':'none';return;}dd.style.display=dd.style.display==='block'?'none':'block';});}
+    document.addEventListener('click',function(e){closeLang();if(navBar&&navBar.classList.contains('nav-open')&&navToggle&&!navBar.contains(e.target))closeMenu();});
+    if(mq.addEventListener){mq.addEventListener('change',sync);}else if(mq.addListener){mq.addListener(sync);}
+    window.addEventListener('resize',sync);sync();
+  })();
+  function setLang(lang){
+    if(lang==='ko'){window.location.href='../index.html';return;}
+    var dd=document.getElementById('langDropdown');var lb=document.getElementById('langLabel');
+    if(dd){dd.style.display='none';if(dd.parentElement)dd.parentElement.classList.remove('lang-open');}
+    if(lb)lb.textContent=lang.toUpperCase();
+  }
+  </script>
+
+  <script>
+  (function(){
+    var cards=Array.prototype.slice.call(document.querySelectorAll('#work .group.cursor-pointer'));
+    if(!cards.length)return;
+    cards.forEach(function(c){c.classList.add('work-reveal');c.style.setProperty('--work-delay','0s');});
+    if(!('IntersectionObserver'in window)){cards.forEach(function(c){c.classList.add('work-reveal-in');});return;}
+    var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(!e.isIntersecting)return;e.target.classList.add('work-reveal-in');obs.unobserve(e.target);});},{threshold:0.18,rootMargin:'0px 0px -8% 0px'});
+    cards.forEach(function(c){obs.observe(c);});
+  })();
+  </script>
+
+</body>
+</html>
