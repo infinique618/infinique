@@ -1,0 +1,42 @@
+<div id="mainWorkGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2"></div>
+</div></section><script>
+(function() {
+  var DEFAULTS = [
+    {id:1,name:"Index Robotics",category:"ir",categoryLabel:"IR",image:"assets/work-01.jpg",showOnMain:true,mainOrder:1,workOrder:1},
+    {id:2,name:"Kiuri",category:"company-profile",categoryLabel:"\uD68C\uC0AC\uC18C\uAC1C\uC11C",image:"assets/work-02.jpg",showOnMain:true,mainOrder:2,workOrder:2},
+    {id:3,name:"Trimass",category:"ir",categoryLabel:"IR",image:"assets/work-03.jpg",showOnMain:true,mainOrder:3,workOrder:3},
+    {id:4,name:"TVING",category:"service-intro",categoryLabel:"\uC11C\uBE44\uC2A4\uC18C\uAC1C\uC11C",image:"assets/work-04.jpg",showOnMain:true,mainOrder:4,workOrder:4},
+    {id:5,name:"HiKey",category:"business-plan",categoryLabel:"\uC0AC\uC5C5\uACC4\uD68D\uC11C",image:"assets/work-05.jpg",showOnMain:true,mainOrder:5,workOrder:5},
+    {id:6,name:"Sweat",category:"ir",categoryLabel:"IR",image:"assets/work-06.jpg",showOnMain:true,mainOrder:6,workOrder:6},
+    {id:7,name:"Mongyu Garden",category:"service-intro",categoryLabel:"\uC11C\uBE44\uC2A4\uC18C\uAC1C\uC11C",image:"assets/work-07.jpg",showOnMain:true,mainOrder:7,workOrder:7},
+    {id:8,name:"ITcon",category:"company-profile",categoryLabel:"\uD68C\uC0AC\uC18C\uAC1C\uC11C",image:"assets/work-08.jpg",showOnMain:true,mainOrder:8,workOrder:8},
+    {id:9,name:"Pulse Kingdom",category:"company-profile",categoryLabel:"\uD68C\uC0AC\uC18C\uAC1C\uC11C",image:"assets/work-09.jpg",showOnMain:true,mainOrder:9,workOrder:9},
+    {id:10,name:"Hecaton",category:"ir",categoryLabel:"IR",image:"assets/work-10.jpg",showOnMain:true,mainOrder:10,workOrder:10},
+    {id:11,name:"CJ",category:"business-proposal",categoryLabel:"\uC0AC\uC5C5\uC81C\uC548\uC11C",image:"assets/work-11.jpg",showOnMain:true,mainOrder:11,workOrder:11},
+    {id:12,name:"KRC",category:"business-plan",categoryLabel:"\uC0AC\uC5C5\uACC4\uD68D\uC11C",image:"assets/work-12.jpg",showOnMain:true,mainOrder:12,workOrder:12},
+    {id:13,name:"Luna",category:"service-intro",categoryLabel:"\uC11C\uBE44\uC2A4\uC18C\uAC1C\uC11C",image:"assets/work-13.jpg",showOnMain:true,mainOrder:13,workOrder:13},
+    {id:14,name:"MoneyGuard",category:"business-proposal",categoryLabel:"\uC0AC\uC5C5\uC81C\uC548\uC11C",image:"assets/work-14.jpg",showOnMain:true,mainOrder:14,workOrder:14},
+    {id:15,name:"Vyo",category:"company-profile",categoryLabel:"\uD68C\uC0AC\uC18C\uAC1C\uC11C",image:"assets/work-15.jpg",showOnMain:true,mainOrder:15,workOrder:15},
+    {id:16,name:"AGE",category:"service-intro",categoryLabel:"\uC11C\uBE44\uC2A4\uC18C\uAC1C\uC11C",image:"assets/work-16.jpg",showOnMain:true,mainOrder:16,workOrder:16}
+  ];
+  var raw = localStorage.getItem('iq_works');
+  var works = raw ? JSON.parse(raw) : DEFAULTS;
+  works = works.filter(function(w){ return w.showOnMain; });
+  works.sort(function(a,b){ return (a.mainOrder||99)-(b.mainOrder||99); });
+  var grid = document.getElementById('mainWorkGrid');
+  if (!grid) return;
+  var html = '';
+  works.forEach(function(w) {
+    var img = w.image.replace(/^\.\//,'');
+    html += '<div class="group cursor-pointer">'
+      + '<div class="aspect-square overflow-hidden bg-gray-100 relative rounded-[10px]" style="box-shadow:0 6px 30px rgba(0,0,0,0.7);">'
+      + '<img src="./' + img + '" alt="' + w.name + '" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">'
+      + '<div class="card-overlay"></div>'
+      + '<div class="absolute bottom-3 left-3 right-3 bg-white/40 backdrop-blur-md px-4 py-2.5 rounded-lg flex justify-between items-center border border-white/50">'
+      + '<span class="text-white text-sm font-medium">' + w.name + '</span>'
+      + '<span class="text-white text-sm">' + w.categoryLabel + '</span>'
+      + '</div></div></div>';
+  });
+  grid.innerHTML = html;
+})();
+</script>

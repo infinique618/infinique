@@ -229,6 +229,17 @@
       margin-bottom: 80px;
       padding-bottom: 60px;
     }
+    @media (max-width: 1600px) {
+      .about-hero { margin-bottom: 32px; padding-bottom: 32px; }
+    }
+    @media (max-width: 1200px) {
+      .about-hero { margin-bottom: 16px; padding-bottom: 20px; }
+      .about-diagram-row { gap: 16px !important; }
+    }
+    @media (max-width: 900px) {
+      .about-hero { margin-bottom: 8px; padding-bottom: 16px; }
+      .about-diagram-row { gap: 8px !important; }
+    }
     .about-hero::after {
       content: '';
       position: absolute;
@@ -261,15 +272,24 @@
     .about-copy {
       max-width: 1200px;
       margin: 0;
-      font-size: 14px;
-      line-height: 1.75;
+      font-size: 16px;
+      line-height: 1.65;
       color: rgba(255,255,255,0.76);
+    }
+
+    @media (max-width: 1200px) {
+      .about-copy { font-size: 14px; line-height: 1.75; }
+      .about-copy .br-lg-only { display: none; }
     }
 
     .about-diagram-row {
       display: flex;
       align-items: center;
       gap: 0;
+    }
+    @media (max-width: 1600px) {
+      .about-diagram-row { align-items: flex-start; }
+      .about-intro { padding-top: 0 !important; }
     }
 
     .about-intro {
@@ -983,10 +1003,11 @@
       object-fit: contain;
     }
     @media (max-width: 768px) {
-      .clients-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-      .clients-row { display: contents; }
-      .clients-row-offset { margin: 0; }
+      .clients-grid { gap: 12px; }
+      .clients-row { gap: 8px; }
+      .clients-row-offset { margin: 0 calc((100% + 8px) / 10); }
       .about-clients-wrap { padding: 16px; }
+      .client-tile img { max-width: 70%; max-height: 70%; }
     }
 
     /* Before/After Carousel */
@@ -1535,9 +1556,6 @@
         gap: 16px;
       }
 
-      .about-copy {
-        font-size: 14px;
-      }
 
       .process-grid {
         grid-template-columns: 1fr;
@@ -1768,7 +1786,7 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
             <p class="about-kicker">Introducing Infinique</p>
             <h1 class="about-title">About.</h1>
           </div>
-          <p class="about-copy">인피니크는 단순히 보기 좋은 문서를 만드는 팀이 아니라, 브랜드와 메시지의 본질을 정리하고 목적에 맞는 흐름으로 설계해 설득력 있는 결과물로 완성하는 프레젠테이션 스튜디오입니다.<br>기획, 구조, 디자인, 전달력까지 하나의 흐름으로 연결해 기업과 브랜드의 아이디어가 더 분명하게 이해되고 더 강하게 전달되도록 만듭니다.</p>
+          <p class="about-copy">인피니크는 단순히 보기 좋은 문서를 만드는 팀이 아니라, 브랜드와 메시지의 본질을 정리하고 목적에 맞는 흐름으로 설계해 설득력 있는 결과물로 완성하는 프레젠테이션 스튜디오입니다.<br class="br-lg-only">기획, 구조, 디자인, 전달력까지 하나의 흐름으로 연결해 기업과 브랜드의 아이디어가 더 분명하게 이해되고 더 강하게 전달되도록 만듭니다.</p>
         </section>
 
         <div class="about-diagram-row">

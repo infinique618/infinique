@@ -229,6 +229,17 @@
       margin-bottom: 80px;
       padding-bottom: 60px;
     }
+    @media (max-width: 1600px) {
+      .about-hero { margin-bottom: 32px; padding-bottom: 32px; }
+    }
+    @media (max-width: 1200px) {
+      .about-hero { margin-bottom: 16px; padding-bottom: 20px; }
+      .about-diagram-row { gap: 16px !important; }
+    }
+    @media (max-width: 900px) {
+      .about-hero { margin-bottom: 8px; padding-bottom: 16px; }
+      .about-diagram-row { gap: 8px !important; }
+    }
     .about-hero::after {
       content: '';
       position: absolute;
@@ -261,15 +272,23 @@
     .about-copy {
       max-width: 1200px;
       margin: 0;
-      font-size: 14px;
-      line-height: 1.75;
+      font-size: 16px;
+      line-height: 1.65;
       color: rgba(255,255,255,0.76);
+    }
+
+    @media (max-width: 1200px) {
+      .about-copy { font-size: 14px; line-height: 1.75; }
     }
 
     .about-diagram-row {
       display: flex;
       align-items: center;
       gap: 0;
+    }
+    @media (max-width: 1600px) {
+      .about-diagram-row { align-items: flex-start; }
+      .about-intro { padding-top: 0 !important; }
     }
 
     .about-intro {
@@ -983,10 +1002,11 @@
       object-fit: contain;
     }
     @media (max-width: 768px) {
-      .clients-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-      .clients-row { display: contents; }
-      .clients-row-offset { margin: 0; }
+      .clients-grid { gap: 12px; }
+      .clients-row { gap: 8px; }
+      .clients-row-offset { margin: 0 calc((100% + 8px) / 10); }
       .about-clients-wrap { padding: 16px; }
+      .client-tile img { max-width: 70%; max-height: 70%; }
     }
 
     /* Before/After Carousel */
@@ -1535,9 +1555,6 @@
         gap: 16px;
       }
 
-      .about-copy {
-        font-size: 14px;
-      }
 
       .process-grid {
         grid-template-columns: 1fr;
