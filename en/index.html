@@ -366,9 +366,11 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
             mainWorks.forEach(function(w) {
               var img = w.image||'';
               if (img.indexOf('data:') !== 0 && img.indexOf('http') !== 0) img = img.replace(/^\.\//,'').replace(/^assets\//,'../assets/');
+              var full = w.imageFull || w.image || '';
+              if (full && full.indexOf('data:') !== 0 && full.indexOf('http') !== 0) full = full.replace(/^\.\//,'').replace(/^assets\//,'../assets/');
               var label = EN_LABEL[w.category] || w.categoryLabel || w.category;
               var displayName = w.nameEn || w.name;
-              html += '<div class="group cursor-pointer"><div class="aspect-square overflow-hidden bg-gray-100 relative rounded-[10px]" style="box-shadow:0 6px 30px rgba(0,0,0,0.7);">'
+              html += '<div class="group cursor-pointer" data-full="'+full+'"><div class="aspect-square overflow-hidden bg-gray-100 relative rounded-[10px]" style="box-shadow:0 6px 30px rgba(0,0,0,0.7);">'
                 + '<img src="'+img+'" alt="'+displayName+'" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">'
                 + '<div class="card-overlay"></div>'
                 + '<div class="absolute bottom-3 left-3 right-3 bg-white/40 backdrop-blur-md px-4 py-2.5 rounded-lg flex justify-between items-center gap-2 border border-white/50">'
@@ -381,7 +383,7 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
             return {
               id: r.id, name: r.name || '', nameEn: r.name_en || '',
               category: r.category || '',
-              categoryLabel: r.category_label || '', image: r.image || '',
+              categoryLabel: r.category_label || '', image: r.image || '', imageFull: r.image_full || '',
               showOnMain: !!r.show_on_main, mainOrder: r.main_order || 99, workOrder: r.work_order || 99
             };
           }
@@ -484,7 +486,7 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
     var modal=document.getElementById('imgModal'),modalImg=document.getElementById('modalImg'),modalName=document.getElementById('modalName'),modalType=document.getElementById('modalType'),modalInfo=document.getElementById('modalInfo'),modalClose=document.getElementById('modalClose');
     function openModal(src,name,type){modalImg.src=src;modalName.textContent=name;modalType.textContent=type;modal.style.display='block';requestAnimationFrame(function(){modal.style.opacity='1';modalImg.style.transform='scale(1)';modalInfo.style.opacity='1';});var sw=window.innerWidth-document.documentElement.clientWidth;document.body.style.overflow='hidden';document.body.style.paddingRight=sw+'px';}
     function closeModal(){modal.style.opacity='0';modalImg.style.transform='scale(0.9)';modalInfo.style.opacity='0';setTimeout(function(){modal.style.display='none';document.body.style.overflow='';document.body.style.paddingRight='';},300);}
-    document.querySelectorAll('#work .group.cursor-pointer').forEach(function(card){card.addEventListener('click',function(){var img=card.querySelector('img');var labels=card.querySelectorAll('.absolute span');openModal(img.src,labels[0]?labels[0].textContent:'',labels[1]?labels[1].textContent:'');});});
+    document.querySelectorAll('#work .group.cursor-pointer').forEach(function(card){card.addEventListener('click',function(){var img=card.querySelector('img');var labels=card.querySelectorAll('.absolute span');openModal(card.getAttribute('data-full')||img.src,labels[0]?labels[0].textContent:'',labels[1]?labels[1].textContent:'');});});
     modal.addEventListener('click',function(e){if(e.target===modal||e.target===modal.querySelector('div'))closeModal();});
     modalClose.addEventListener('click',closeModal);
     modalClose.addEventListener('mouseenter',function(){this.style.background='rgba(255,255,255,0.1)';});

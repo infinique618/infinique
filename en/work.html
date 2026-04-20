@@ -774,9 +774,11 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
       works.forEach(function(w) {
         var img = w.image||'';
         if (img.indexOf('data:') !== 0 && img.indexOf('http') !== 0) img = img.replace(/^\.\//,'').replace(/^assets\//,'../assets/');
+        var full = w.imageFull || w.image || '';
+        if (full && full.indexOf('data:') !== 0 && full.indexOf('http') !== 0) full = full.replace(/^\.\//,'').replace(/^assets\//,'../assets/');
         var label = EN_LABEL[w.category] || w.categoryLabel || w.category;
         var displayName = w.nameEn || w.name;
-        html += '<div class="work-card group cursor-pointer category-'+w.category+'" data-category="'+w.category+'">'
+        html += '<div class="work-card group cursor-pointer category-'+w.category+'" data-category="'+w.category+'" data-full="'+full+'">'
           + '<div class="card-frame"><img src="'+img+'" alt="'+displayName+'" loading="lazy" decoding="async">'
           + '<div class="card-overlay"></div>'
           + '<div class="card-meta"><span class="card-name">'+displayName+'</span><span class="card-type">'+label+'</span></div>'
@@ -789,7 +791,7 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
       return {
         id: r.id, name: r.name || '', nameEn: r.name_en || '',
         category: r.category || '',
-        categoryLabel: r.category_label || '', image: r.image || '',
+        categoryLabel: r.category_label || '', image: r.image || '', imageFull: r.image_full || '',
         showOnMain: !!r.show_on_main, mainOrder: r.main_order || 99, workOrder: r.work_order || 99
       };
     }
@@ -960,7 +962,8 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
         var name = card.querySelector('.card-name');
         var type = card.querySelector('.card-type');
         if (!img) return;
-        openModal(img.src, name ? name.textContent : '', type ? type.textContent : '');
+        var fullSrc = card.getAttribute('data-full') || img.src;
+        openModal(fullSrc, name ? name.textContent : '', type ? type.textContent : '');
       });
 
       modal.addEventListener('click', function (e) {
