@@ -1062,7 +1062,7 @@ footer { position:relative; z-index:100; }
     function fromSupabaseRow(r) {
       return {
         id: r.id, name: r.name || '', category: r.category || '',
-        categoryLabel: r.category_label || '', image: r.image || '',
+        categoryLabel: r.category_label || '', image: r.image || '', imageFull: r.image_full || '',
         showOnMain: !!r.show_on_main, mainOrder: r.main_order || 99, workOrder: r.work_order || 99
       };
     }
@@ -1098,7 +1098,9 @@ footer { position:relative; z-index:100; }
     works.forEach(function(w) {
       var img = w.image||'';
       if (img.indexOf('data:') !== 0 && img.indexOf('http') !== 0) img = './' + img.replace(/^\.\//,'');
-      html += '<div class="group cursor-pointer">'
+      var full = w.imageFull || w.image || '';
+      if (full && full.indexOf('data:') !== 0 && full.indexOf('http') !== 0) full = './' + full.replace(/^\.\//,'');
+      html += '<div class="group cursor-pointer" data-full="'+full+'">'
         + '<div class="aspect-square overflow-hidden bg-gray-100 relative rounded-[10px]" style="box-shadow:0 6px 30px rgba(0,0,0,0.7);">'
         + '<img src="'+img+'" alt="'+w.name+'" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">'
         + '<div class="card-overlay"></div>'
@@ -1123,7 +1125,7 @@ footer { position:relative; z-index:100; }
           var modalType = document.getElementById('modalType');
           var modalInfo = document.getElementById('modalInfo');
           if (!img || !modalImg) return;
-          modalImg.src = img.src;
+          modalImg.src = card.getAttribute('data-full') || img.src;
           modalName.textContent = name;
           modalType.textContent = type;
           modal.style.display = 'block';

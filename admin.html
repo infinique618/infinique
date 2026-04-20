@@ -398,17 +398,21 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
     });
   }
 
-  async function uploadWorkImage(blob, nameHint) {
+  async function uploadWorkImage(blob, nameHint, suffix) {
     var safeHint = (nameHint || 'work').replace(/[^a-zA-Z0-9\-_]/g, '').toLowerCase() || 'work';
-    var filename = safeHint + '-' + Date.now() + '.jpg';
+    var sfx = suffix ? ('-' + suffix) : '';
+    var filename = safeHint + '-' + Date.now() + sfx + '.jpg';
     var { error } = await sb.storage.from('works').upload(filename, blob, { contentType: 'image/jpeg', upsert: false });
     if (error) throw error;
     return sb.storage.from('works').getPublicUrl(filename).data.publicUrl;
   }
 
   async function processAndUpload(file, nameHint) {
-    var resized = await resizeImage(file, 800, 0.85);
-    return uploadWorkImage(resized, nameHint);
+    var thumbBlob = await resizeImage(file, 800, 0.85);
+    var fullBlob = await resizeImage(file, 2400, 0.9);
+    var thumbUrl = await uploadWorkImage(thumbBlob, nameHint, 'thumb');
+    var fullUrl = await uploadWorkImage(fullBlob, nameHint, 'full');
+    return { image: thumbUrl, imageFull: fullUrl };
   }
 
   // DB 컬럼 ↔ JS 필드 변환
@@ -420,6 +424,7 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
       category: r.category || '',
       categoryLabel: r.category_label || '',
       image: r.image || '',
+      imageFull: r.image_full || '',
       showOnMain: !!r.show_on_main,
       mainOrder: r.main_order || 99,
       workOrder: r.work_order || 99
@@ -433,6 +438,7 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
       category: w.category,
       category_label: w.categoryLabel,
       image: w.image,
+      image_full: w.imageFull || null,
       show_on_main: !!w.showOnMain,
       main_order: w.mainOrder || null,
       work_order: w.workOrder || null
@@ -564,9 +570,12 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
           if (src.indexOf('data:') !== 0 && src.indexOf('http') !== 0) {
             src = './' + src.replace(/^\.\//, '');
           }
-          var resized = await resizeImage(src, 800, 0.85);
-          var url = await uploadWorkImage(resized, w.name);
-          w.image = url;
+          var thumbBlob = await resizeImage(src, 800, 0.85);
+          var fullBlob = await resizeImage(src, 2400, 0.9);
+          var thumbUrl = await uploadWorkImage(thumbBlob, w.name, 'thumb');
+          var fullUrl = await uploadWorkImage(fullBlob, w.name, 'full');
+          w.image = thumbUrl;
+          w.imageFull = fullUrl;
           await save(w);
           ok++;
           btn.textContent = '처리 중... ' + ok + '/' + works.length;
@@ -926,9 +935,9 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
       uploadText.textContent = '리사이즈 & 업로드 중...';
       try {
         var nameHint = document.getElementById('fieldName').value.trim() || file.name;
-        var url = await processAndUpload(file, nameHint);
-        pendingImageData = url;
-        document.getElementById('fieldImagePath').value = url;
+        var uploaded = await processAndUpload(file, nameHint);
+        pendingImageData = uploaded;
+        document.getElementById('fieldImagePath').value = uploaded.image;
         uploadText.textContent = '업로드 완료';
         setTimeout(function(){ uploadText.style.display = 'none'; }, 1500);
       } catch(err) {
@@ -1007,7 +1016,9 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
     if (!name) { alert('프로젝트명(한글)을 입력해주세요.'); return; }
     if (!category) { alert('카테고리를 선택해주세요.'); return; }
 
-    var image = pendingImageData || imagePath || '';
+    var imageData = pendingImageData;
+    var thumbUrl = imageData ? imageData.image : (imagePath || '');
+    var fullUrl = imageData ? imageData.imageFull : '';
     var target;
 
     if (editId) {
@@ -1018,7 +1029,8 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
         w.nameEn = nameEn;
         w.category = category;
         w.categoryLabel = KO_LABEL[category] || category;
-        if (image) w.image = image;
+        if (thumbUrl) w.image = thumbUrl;
+        if (fullUrl) w.imageFull = fullUrl;
         w.showOnMain = showOnMain;
         target = w;
       }
@@ -1032,7 +1044,8 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
         nameEn: nameEn,
         category: category,
         categoryLabel: KO_LABEL[category] || category,
-        image: image,
+        image: thumbUrl,
+        imageFull: fullUrl,
         showOnMain: showOnMain,
         mainOrder: maxMain + 1,
         workOrder: maxWork + 1

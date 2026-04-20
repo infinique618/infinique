@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Work | Infinique — PPT 포트폴리오 & 프레젠테이션 디자인 사례</title>
   <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
-  <meta name="description" content="인피니크가 제작한 PPT 포트폴리오. IR, 회사소개서, 사업계획서, 사업제안서, 서비스소개서 등 다양한 업종의 프레젠테이션 디자인 사례를 확인하세요.">
+  <meta name="description" content="인피니크가 제작한 PPT 포트폴리오. IR, 회사소개서, 사업계획서 등 다양한 디자인 사례를 확인하세요.">
   <meta name="keywords" content="PPT 포트폴리오, 프레젠테이션 포트폴리오, IR 디자인, 회사소개서 디자인, 사업계획서 디자인, 사업제안서 디자인, 서비스소개서 디자인, PPT 제작 사례">
   <meta name="author" content="Infinique">
   <link rel="canonical" href="https://infinique.kr/work.html">
@@ -13,7 +13,7 @@
   <link rel="alternate" hreflang="en" href="https://infinique.kr/en/work.html">
   <link rel="alternate" hreflang="x-default" href="https://infinique.kr/work.html">
   <meta property="og:title" content="Work | Infinique — PPT 포트폴리오 & 프레젠테이션 디자인 사례">
-  <meta property="og:description" content="인피니크가 제작한 IR, 회사소개서, 사업계획서, 사업제안서, 서비스소개서 등 다양한 프레젠테이션 포트폴리오.">
+  <meta property="og:description" content="인피니크가 제작한 IR, 회사소개서, 사업계획서 등 다양한 프레젠테이션 포트폴리오.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://infinique.kr/work.html">
   <meta property="og:site_name" content="Infinique">
@@ -796,7 +796,9 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
       works.forEach(function(w) {
         var img = w.image||'';
         if (img.indexOf('data:') !== 0 && img.indexOf('http') !== 0) img = './' + img.replace(/^\.\//,'');
-        html += '<div class="work-card group cursor-pointer category-'+w.category+'" data-category="'+w.category+'">'
+        var full = w.imageFull || w.image || '';
+        if (full && full.indexOf('data:') !== 0 && full.indexOf('http') !== 0) full = './' + full.replace(/^\.\//,'');
+        html += '<div class="work-card group cursor-pointer category-'+w.category+'" data-category="'+w.category+'" data-full="'+full+'">'
           + '<div class="card-frame"><img src="'+img+'" alt="'+w.name+'" loading="lazy" decoding="async">'
           + '<div class="card-overlay"></div>'
           + '<div class="card-meta"><span class="card-name">'+w.name+'</span><span class="card-type">'+w.categoryLabel+'</span></div>'
@@ -808,7 +810,7 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
     function fromSupabaseRow(r) {
       return {
         id: r.id, name: r.name || '', nameEn: r.name_en || '', category: r.category || '',
-        categoryLabel: r.category_label || '', image: r.image || '',
+        categoryLabel: r.category_label || '', image: r.image || '', imageFull: r.image_full || '',
         showOnMain: !!r.show_on_main, mainOrder: r.main_order || 99, workOrder: r.work_order || 99
       };
     }
@@ -961,7 +963,8 @@ body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, button, td, th {
         var name = card.querySelector('.card-name');
         var type = card.querySelector('.card-type');
         if (!img) return;
-        openModal(img.src, name ? name.textContent : '', type ? type.textContent : '');
+        var fullSrc = card.getAttribute('data-full') || img.src;
+        openModal(fullSrc, name ? name.textContent : '', type ? type.textContent : '');
       });
 
       modal.addEventListener('click', function (e) {
